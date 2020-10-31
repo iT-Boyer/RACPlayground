@@ -1,4 +1,10 @@
 #  说明
+### 教程
+[状态』驱动的世界：ReactiveCocoa](https://draveness.me/racsignal/)
+[ReactiveCocoa入门教程：第一部分](http://www.cocoachina.com/articles/10994)
+[ReactiveCocoa入门教程：第二部分](https://developer.aliyun.com/article/33610)
+
+
 ### Xcode 11 新建工程中的SceneDelegate
 [原文](https://www.jianshu.com/p/20df9eb8c913)
 Xcode 11 建新工程默认会创建通过 UIScene 管理多个 UIWindow 的应用，工程中除了 AppDelegate 外还会有一个 SceneDelegate，这是为了实现iPadOS支持多窗口的结果。AppDelegate.h不再有window属性，window属性被定义在了SceneDelegate.h中，AppDelegate中有新增的关于scene的代理方法，SceneDelegate中也有相应的代理方法。因此，当我们用Xcode11针对不同版本的iOS开发应用时，就要做一些适配。
