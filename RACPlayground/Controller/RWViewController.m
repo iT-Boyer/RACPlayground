@@ -9,6 +9,8 @@
 #import "RWViewController.h"
 #import "RWDummySignInService.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 @interface RWViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -37,6 +39,26 @@
   
   // initially hide the failure message
   self.signInFailureText.hidden = YES;
+    
+    //RAC
+    //监听输入的文字长度大于3的信号对象
+    RACSignal *userSignal = self.usernameTextField.rac_textSignal;
+    RACSignal *filterUserSigal = [userSignal filter:^BOOL(id value) {
+        NSString *text = value;
+        return  text.length > 3;
+    }];
+    [filterUserSigal subscribeNext:^(NSString *x) {
+        NSLog(@"%@",x);
+    }] ;
+    
+    // 事件：log输出变成了文本的长度而不是内容
+    [[[self.usernameTextField.rac_textSignal map:^id(NSString *value) {
+                return @(value.length);
+        }] filter:^BOOL(NSNumber *value) {
+            return [value integerValue] > 3;
+        }] subscribeNext:^(id x) {
+            NSLog(@"%@",x);
+        }];
 }
 
 - (BOOL)isValidUsername:(NSString *)username {
