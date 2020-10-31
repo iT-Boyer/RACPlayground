@@ -61,6 +61,80 @@ RACSignal *pwdValidColor = [pwdValid map:^id(NSNumber *isValid) {
 RAC(self.passwordTextField,backgroundColor) = pwdValidColor;
 ```
 3. 聚合信号
+目前在应用中，登录按钮只有当用户名和密码输入框的输入都有效时才工作。现在要把这里改成响应式的。
+如下代码中，使用combineLatest:reduce:方法把validUsernameSignal和validPasswordSignal产生的最新的值聚合在一起，并生成一个新的信号。每次这两个源信号的任何一个产生新值时，reduce block都会执行，block的返回值会发给下一个信号。
+``` objc
+RACSignal *signUpActiveSignal =
+  [RACSignal combineLatest:@[validUsernameSignal, validPasswordSignal]
+                    reduce:^id(NSNumber*usernameValid, NSNumber *passwordValid){
+                      return @([usernameValid boolValue]&&[passwordValid boolValue]);
+          }];
+```
+注意：RACsignal的这个方法可以聚合任意数量的信号，reduce block的参数和每个源信号相关。ReactiveCocoa有一个工具类RACBlockTrampoline，它在内部处理reduce block的可变参数。实际上在ReactiveCocoa的实现中有很多隐藏的技巧，值得你去看看。
+
+上图展示了一些重要的概念，你可以使用ReactiveCocoa来完成一些重量级的任务。  
+1. 分割——信号可以有很多subscriber，也就是作为很多后续步骤的源。注意上图中那个用来表示用户名和密码有效性的布尔信号，它被分割成多个，用于不同的地方。  
+2. 聚合——多个信号可以聚合成一个新的信号，在上面的例子中，两个布尔信号聚合成了一个。实际上你可以聚合并产生任何类型的信号。  
+这些改动的结果就是，代码中没有用来表示两个输入框有效状态的私有属性了。这就是用响应式编程的一个关键区别，你不需要使用实例变量来追踪瞬时状态。  
+
+4. 响应式登录:点击事件的信号
+在storyboard中，登录按钮的Touch Up Inside事件和RWViewController.m中的signInButtonTouched方法是绑定的。下面会用响应的方法替换，所以首先要做的就是断开当前的storyboard action。  
+你已经知道了ReactiveCocoa框架是如何给基本UIKit控件添加属性和方法的了。   
+目前你已经使用了rac_textSignal，它会在文本发生变化时产生信号。   
+为了处理按钮的事件，现在需要用到ReactiveCocoa为UIKit添加的另一个方法，rac_signalForControlEvents。  
+``` objc
+[[self.signInButton
+   rac_signalForControlEvents:UIControlEventTouchUpInside]
+   subscribeNext:^(id x) {
+     NSLog(@"button clicked");
+   }];
+```
+5. 创建信号：如何使用这些不是用信号表示的API呢？
+把已有的异步API用信号的方式，创建了一个信号，使用用户名和密码登录：
+
+``` objc
+- (RACSignal *)signInSignal {
+return [RACSignal createSignal:^RACDisposable *(id subscriber){
+   [self.signInService 
+     signInWithUsername:self.usernameTextField.text
+               password:self.passwordTextField.text
+               complete:^(BOOL success){
+                    [subscriber sendNext:@(success)];
+                    [subscriber sendCompleted];
+     }];
+   return nil;
+}];
+}
+```
+上面的代码使用RACSignal的createSignal:方法来创建信号。方法的入参是一个block，这个block描述了这个信号。当这个信号有subscriber时，block里的代码就会执行。  
+block的入参是一个subscriber实例，它遵循RACSubscriber协议，协议里有一些方法来产生事件，你可以发送任意数量的next事件，或者用error\complete事件来终止。本例中，信号发送了一个next事件来表示登录是否成功，随后是一个complete事件。  
+
+这个block的返回值是一个RACDisposable对象，它允许你在一个订阅被取消时执行一些清理工作。当前的信号不需要执行清理操作，所以返回nil就可以了。  
+可以看到，把一个异步API用信号封装是多简单！  
+6. 添加附加操作（Adding side-effects）
+
+``` objc
+[[[[self.signInButton
+   rac_signalForControlEvents:UIControlEventTouchUpInside]
+   doNext:^(id x){
+     self.signInButton.enabled =NO;
+     self.signInFailureText.hidden =YES;
+   }]
+   flattenMap:^id(id x){
+     return[self signInSignal];
+   }]
+   subscribeNext:^(NSNumber*signedIn){
+     self.signInButton.enabled =YES;
+     BOOL success =[signedIn boolValue];
+     self.signInFailureText.hidden = success;
+     if(success){
+       [self performSegueWithIdentifier:@"signInSuccess" sender:self];
+     }
+   }];
+```
+你可以看到doNext:是直接跟在按钮点击事件的后面。而且doNext: block并没有返回值。因为它是附加操作，并不改变事件本身。
+
+上面的doNext: block把按钮置为不可点击，隐藏登录失败提示。然后在subscribeNext: block里重新把按钮置为可点击，并根据登录结果来决定是否显示失败提示。
 
 #### 什么是事件
 事件可以包括任何事情。
@@ -79,6 +153,22 @@ map操作之后的步骤收到的都是NSNumber实例。你可以使用map操作
   }];
 ```
 新加的map操作通过block改变了事件的数据。map从上一个next事件接收数据，通过执行block把返回值传给下一个next事件。在上面的代码中，map以NSString为输入，取字符串的长度，返回一个NSNumber。
+现在就来使用这个新的信号。
+``` objc
+[[[self.signInButton
+   rac_signalForControlEvents:UIControlEventTouchUpInside]
+   map:^id(id x){
+     return[self signInSignal];
+   }]
+   subscribeNext:^(id x){
+     NSLog(@"Sign in result: %@", x);
+   }];
+```
+上面的代码使用map方法，把按钮点击信号转换成了登录信号。subscriber输出log。
+当点击按钮时，rac_signalForControlEvents发送了一个next事件（事件的data是UIButton）。map操作创建并返回了登录信号，这意味着后续步骤都会收到一个RACSignal。这就是你在subscribeNext:这步看到的。
+
+上面问题的解决方法，有时候叫做信号中的信号，换句话说就是一个外部信号里面还有一个内部信号。你可以在外部信号的subscribeNext:block里订阅内部信号。不过这样嵌套太混乱啦，还好ReactiveCocoa已经解决了这个问题。
+
 
 
 ### 通过demo希望得到什么

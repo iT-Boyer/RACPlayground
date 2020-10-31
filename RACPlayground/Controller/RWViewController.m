@@ -76,6 +76,67 @@
         return isValid.boolValue?[UIColor clearColor]:[UIColor yellowColor];
     }];
     RAC(self.passwordTextField,backgroundColor) = pwdValidColor;
+    
+    //聚合信号，更改登录按钮状态
+    RACSignal *signUpdateActiveSignal = [RACSignal combineLatest:@[userValid,pwdValid] reduce:^id(NSNumber *userValid,NSNumber *pwdValid){
+        return @(userValid.boolValue && pwdValid.boolValue);
+    }];
+    [signUpdateActiveSignal subscribeNext:^(NSNumber *active) {
+        self.signInButton.enabled = active.boolValue;
+    }];
+    
+    //响应式登录:创建信号 [self signSignal];
+    [[[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+      map:^id(id value) {
+        return [self signSignal];
+    }] subscribeNext:^(id x) {
+        NSLog(@"Sign in result: %@", x);
+    }];
+    
+    //信号中的信号
+    [[[self.signInButton
+       rac_signalForControlEvents:UIControlEventTouchUpInside]
+      flattenMap:^id(id x){
+          return[self signSignal];
+      }]
+     subscribeNext:^(NSNumber*signedIn){
+         BOOL success =[signedIn boolValue];
+         self.signInFailureText.hidden = success;
+         if(success){
+             [self performSegueWithIdentifier:@"signInSuccess" sender:self];
+         }
+     }];
+    
+    //添加附加操作（Adding side-effects）
+    [[[[self.signInButton
+        rac_signalForControlEvents:UIControlEventTouchUpInside]
+       doNext:^(id x){
+           self.signInButton.enabled = NO;
+           self.signInFailureText.hidden = YES;
+       }]
+      flattenMap:^id(id x){
+          return[self signSignal];
+      }]
+     subscribeNext:^(NSNumber*signedIn){
+         self.signInButton.enabled = YES;
+         BOOL success =[signedIn boolValue];
+         self.signInFailureText.hidden = success;
+         if(success){
+             [self performSegueWithIdentifier:@"signInSuccess" sender:self];
+         }
+     }];
+}
+
+
+-(RACSignal *)signSignal
+{
+    RACSignal *sign = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [self.signInService signInWithUsername:self.usernameTextField.text password:self.passwordTextField.text complete:^(BOOL success) {
+            [subscriber sendNext:@(success)];
+            [subscriber sendCompleted];
+        }];
+    }];
+    return sign;
 }
 
 - (BOOL)isValidUsername:(NSString *)username {
