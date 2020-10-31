@@ -24,7 +24,9 @@ RACSignal有很多方法可以来订阅不同的事件类型。每个方法都�
 
 ReactiveCocoa框架使用category来为很多基本UIKit控件添加signal。这样你就能给控件添加订阅了，text field的rac_textSignal就是这么来的。
 
+
 #### 类型转换
+1. 信号中的block参数的类型，一般是明确的。 
 将id隐式转换为NSString，这看起来不是很好看。幸运的是，传入block的值肯定是个NSString，所以你可以直接修改参数类型，把代码更新成下面的这样的：
 ``` objc
 [[self.usernameTextField.rac_textSignal
@@ -35,6 +37,30 @@ ReactiveCocoa框架使用category来为很多基本UIKit控件添加signal。这
     NSLog(@"%@", x);
   }];
 ```
+2. RAC宏 ： 绑定UI控件的颜色属性信号
+RAC帮助把信号的输出转为UIKit的属性，例如：输入框的backgroundColor属性上。
+RAC宏允许直接把信号的输出应用到对象的属性上。
+RAC宏有两个参数，第一个是需要设置属性值的对象，第二个是属性名。每次信号产生一个next事件，传递过来的值都会应用到该属性上。
+如下代码：两个文本信号，经过一个map转为表示是否有效的布尔值，再经过一个map转为UIColor，而这个UIColor已经和输入框的背景颜色绑定了。
+``` objc
+//MARK:属性信号
+RACSignal *userValid = [self.usernameTextField.rac_textSignal map:^id(NSString *text) {
+    return @([self isValidUsername:text]);
+}];
+RACSignal *userValidColor = [userValid map:^id(NSNumber *isValid) {
+    return isValid.boolValue?[UIColor orangeColor]:[UIColor yellowColor];
+}];
+RAC(self.usernameTextField,backgroundColor) = userValidColor;
+//MARK:颜色属性信号
+RACSignal *pwdValid = [self.passwordTextField.rac_textSignal map:^id(NSString *text) {
+    return @([self isValidPassword:text]);
+}];
+RACSignal *pwdValidColor = [pwdValid map:^id(NSNumber *isValid) {
+    return isValid.boolValue?[UIColor orangeColor]:[UIColor yellowColor];
+}];
+RAC(self.passwordTextField,backgroundColor) = pwdValidColor;
+```
+3. 聚合信号
 
 #### 什么是事件
 事件可以包括任何事情。

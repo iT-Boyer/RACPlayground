@@ -58,7 +58,24 @@
             return [value integerValue] > 3;
         }] subscribeNext:^(id x) {
             NSLog(@"%@",x);
-        }];
+    }];
+    
+    //MARK:属性信号
+    RACSignal *userValid = [self.usernameTextField.rac_textSignal map:^id(NSString *text) {
+        return @([self isValidUsername:text]);
+    }];
+    RACSignal *userValidColor = [userValid map:^id(NSNumber *isValid) {
+        return isValid.boolValue?[UIColor clearColor]:[UIColor yellowColor];
+    }];
+    RAC(self.usernameTextField,backgroundColor) = userValidColor;
+    //MARK:颜色属性信号
+    RACSignal *pwdValid = [self.passwordTextField.rac_textSignal map:^id(NSString *text) {
+        return @([self isValidPassword:text]);
+    }];
+    RACSignal *pwdValidColor = [pwdValid map:^id(NSNumber *isValid) {
+        return isValid.boolValue?[UIColor clearColor]:[UIColor yellowColor];
+    }];
+    RAC(self.passwordTextField,backgroundColor) = pwdValidColor;
 }
 
 - (BOOL)isValidUsername:(NSString *)username {
@@ -90,8 +107,8 @@
 // updates the enabled state and style of the text fields based on whether the current username
 // and password combo is valid
 - (void)updateUIState {
-  self.usernameTextField.backgroundColor = self.usernameIsValid ? [UIColor clearColor] : [UIColor yellowColor];
-  self.passwordTextField.backgroundColor = self.passwordIsValid ? [UIColor clearColor] : [UIColor yellowColor];
+//  self.usernameTextField.backgroundColor = self.usernameIsValid ? [UIColor clearColor] : [UIColor yellowColor];
+//  self.passwordTextField.backgroundColor = self.passwordIsValid ? [UIColor clearColor] : [UIColor yellowColor];
   self.signInButton.enabled = self.usernameIsValid && self.passwordIsValid;
 }
 
