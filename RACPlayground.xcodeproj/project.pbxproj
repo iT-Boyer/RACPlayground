@@ -20,7 +20,6 @@
 		F931B336254D541B00C215A5 /* RWDummySignInService.m in Sources */ = {isa = PBXBuildFile; fileRef = F931B334254D541B00C215A5 /* RWDummySignInService.m */; };
 		F931B33B254D542A00C215A5 /* kitten.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F931B33A254D542A00C215A5 /* kitten.jpg */; };
 		F931B348254D558300C215A5 /* Pods_RACPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1489E75787D5D8C9029B0004 /* Pods_RACPlayground.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F931B4F1254D5C6900C215A5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F931B2F8254D536300C215A5 /* SceneDelegate.m */; };
 		F9D95A3F254D660400F39CAD /* RWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D95A3D254D660400F39CAD /* RWViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -399,7 +398,6 @@
 			files = (
 				F9D95A3F254D660400F39CAD /* RWViewController.m in Sources */,
 				F931B2FC254D536300C215A5 /* ViewController.m in Sources */,
-				F931B4F1254D5C6900C215A5 /* SceneDelegate.m in Sources */,
 				F931B2F6254D536300C215A5 /* AppDelegate.m in Sources */,
 				F931B307254D536600C215A5 /* main.m in Sources */,
 				F931B32F254D540400C215A5 /* RACViewController.m in Sources */,
