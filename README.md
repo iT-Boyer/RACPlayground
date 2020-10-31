@@ -1,9 +1,14 @@
 #  说明
 ### 教程
-[状态』驱动的世界：ReactiveCocoa](https://draveness.me/racsignal/)
-[ReactiveCocoa入门教程：第一部分](http://www.cocoachina.com/articles/10994)
-[ReactiveCocoa入门教程：第二部分](https://developer.aliyun.com/article/33610)
+[状态』驱动的世界：ReactiveCocoa](https://draveness.me/racsignal/)  
+[ReactiveCocoa入门教程：第一部分](http://www.cocoachina.com/articles/10994)  
+[ReactiveCocoa入门教程：第二部分](https://developer.aliyun.com/article/33610)  
 
+### 通过demo希望得到什么
+1. button事件的使用
+2. 输入框代理的使用
+3. 异步请求网络的使用
+4. UI更新数据的使用
 
 ### Xcode 11 新建工程中的SceneDelegate
 [原文](https://www.jianshu.com/p/20df9eb8c913)
