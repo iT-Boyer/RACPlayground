@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2DB9C66680B3AF6CD25DD96E /* Pods_RACPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE62FBD2015793094458632A /* Pods_RACPlayground.framework */; };
+		A41A387725504BE7003810AD /* LegoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A387625504BE6003810AD /* LegoViewController.m */; };
+		A41A389225504DAC003810AD /* HomeDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388325504DAC003810AD /* HomeDataManager.m */; };
+		A41A389325504DAC003810AD /* HomeInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388725504DAC003810AD /* HomeInteractor.m */; };
+		A41A389425504DAC003810AD /* HomePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388B25504DAC003810AD /* HomePresenter.m */; };
+		A41A389525504DAC003810AD /* HomeRouting.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388D25504DAC003810AD /* HomeRouting.m */; };
+		A41A389625504DAC003810AD /* HomeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A389025504DAC003810AD /* HomeActivity.m */; };
 		F931B2F6254D536300C215A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F931B2F5254D536300C215A5 /* AppDelegate.m */; };
 		F931B2FF254D536300C215A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B2FD254D536300C215A5 /* Main.storyboard */; };
 		F931B301254D536600C215A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F931B300254D536600C215A5 /* Assets.xcassets */; };
@@ -62,6 +68,23 @@
 		1489E75787D5D8C9029B0004 /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		354F0A6A76096047F3D31FB7 /* Pods-RACPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-RACPlayground/Pods-RACPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		6988A08CB8E3BD7D5E12A392 /* Pods-RACPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-RACPlayground/Pods-RACPlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		A41A387525504BE6003810AD /* LegoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegoViewController.h; sourceTree = "<group>"; };
+		A41A387625504BE6003810AD /* LegoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegoViewController.m; sourceTree = "<group>"; };
+		A41A387C25504DAC003810AD /* HomeDataManagerPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataManagerPort.h; sourceTree = "<group>"; };
+		A41A387D25504DAC003810AD /* HomeWireframePort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWireframePort.h; sourceTree = "<group>"; };
+		A41A387E25504DAC003810AD /* HomeInteractorPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInteractorPort.h; sourceTree = "<group>"; };
+		A41A387F25504DAC003810AD /* HomeEventHandlerPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeEventHandlerPort.h; sourceTree = "<group>"; };
+		A41A388025504DAC003810AD /* HomeUserInterfacePort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeUserInterfacePort.h; sourceTree = "<group>"; };
+		A41A388325504DAC003810AD /* HomeDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataManager.m; sourceTree = "<group>"; };
+		A41A388425504DAC003810AD /* HomeDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataManager.h; sourceTree = "<group>"; };
+		A41A388625504DAC003810AD /* HomeInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInteractor.h; sourceTree = "<group>"; };
+		A41A388725504DAC003810AD /* HomeInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeInteractor.m; sourceTree = "<group>"; };
+		A41A388A25504DAC003810AD /* HomePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePresenter.h; sourceTree = "<group>"; };
+		A41A388B25504DAC003810AD /* HomePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePresenter.m; sourceTree = "<group>"; };
+		A41A388D25504DAC003810AD /* HomeRouting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRouting.m; sourceTree = "<group>"; };
+		A41A388E25504DAC003810AD /* HomeRouting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRouting.h; sourceTree = "<group>"; };
+		A41A389025504DAC003810AD /* HomeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeActivity.m; sourceTree = "<group>"; };
+		A41A389125504DAC003810AD /* HomeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeActivity.h; sourceTree = "<group>"; };
 		DE62FBD2015793094458632A /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F931B2F1254D536300C215A5 /* RACPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F931B2F4254D536300C215A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +154,108 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A41A387325504B80003810AD /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				A41A387525504BE6003810AD /* LegoViewController.h */,
+				A41A387625504BE6003810AD /* LegoViewController.m */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		A41A387425504B97003810AD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A41A387A25504DAC003810AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A41A387B25504DAC003810AD /* Module Interface */,
+				A41A388125504DAC003810AD /* Application Logic */,
+				A41A388825504DAC003810AD /* User Interface */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A41A387B25504DAC003810AD /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A41A387C25504DAC003810AD /* HomeDataManagerPort.h */,
+				A41A387D25504DAC003810AD /* HomeWireframePort.h */,
+				A41A387E25504DAC003810AD /* HomeInteractorPort.h */,
+				A41A387F25504DAC003810AD /* HomeEventHandlerPort.h */,
+				A41A388025504DAC003810AD /* HomeUserInterfacePort.h */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		A41A388125504DAC003810AD /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A41A388225504DAC003810AD /* DataManager */,
+				A41A388525504DAC003810AD /* Interactor */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		A41A388225504DAC003810AD /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A41A388425504DAC003810AD /* HomeDataManager.h */,
+				A41A388325504DAC003810AD /* HomeDataManager.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		A41A388525504DAC003810AD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A41A388625504DAC003810AD /* HomeInteractor.h */,
+				A41A388725504DAC003810AD /* HomeInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A41A388825504DAC003810AD /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A41A388925504DAC003810AD /* Presenter */,
+				A41A388C25504DAC003810AD /* Wireframe */,
+				A41A388F25504DAC003810AD /* View */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		A41A388925504DAC003810AD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A41A388A25504DAC003810AD /* HomePresenter.h */,
+				A41A388B25504DAC003810AD /* HomePresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A41A388C25504DAC003810AD /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A41A388E25504DAC003810AD /* HomeRouting.h */,
+				A41A388D25504DAC003810AD /* HomeRouting.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		A41A388F25504DAC003810AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A41A389125504DAC003810AD /* HomeActivity.h */,
+				A41A389025504DAC003810AD /* HomeActivity.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A43860056793BF8B167B1608 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +357,7 @@
 		F978756B254FAFD500B75702 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A41A387A25504DAC003810AD /* Home */,
 				F97875B2254FB06A00B75702 /* Login */,
 			);
 			path = Modules;
@@ -251,6 +377,8 @@
 		F978756D254FB00800B75702 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A41A387425504B97003810AD /* Config */,
+				A41A387325504B80003810AD /* NavigationBar */,
 				F931B333254D541300C215A5 /* Server */,
 			);
 			path = Common;
@@ -552,12 +680,18 @@
 				F97875CA254FB06A00B75702 /* LoginDataManager.m in Sources */,
 				F9D95A3F254D660400F39CAD /* RWViewController.m in Sources */,
 				F97875CD254FB06A00B75702 /* LoginRouting.m in Sources */,
+				A41A389325504DAC003810AD /* HomeInteractor.m in Sources */,
+				A41A389425504DAC003810AD /* HomePresenter.m in Sources */,
+				A41A389525504DAC003810AD /* HomeRouting.m in Sources */,
 				F931B2F6254D536300C215A5 /* AppDelegate.m in Sources */,
 				F931B307254D536600C215A5 /* main.m in Sources */,
 				F97875CC254FB06A00B75702 /* LoginPresenter.m in Sources */,
+				A41A387725504BE7003810AD /* LegoViewController.m in Sources */,
 				F97875CE254FB06A00B75702 /* LoginActivity.m in Sources */,
 				F931B32F254D540400C215A5 /* RACViewController.m in Sources */,
+				A41A389225504DAC003810AD /* HomeDataManager.m in Sources */,
 				F931B336254D541B00C215A5 /* RWDummySignInService.m in Sources */,
+				A41A389625504DAC003810AD /* HomeActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

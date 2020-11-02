@@ -38,15 +38,22 @@
     // 注册APP的所有URL
     [XFURLRoute initURLGroup:@[
                                  @"rac://Login", // 测试跳转
+                                 @"rac://Home"
                                  ]];
     
     // 根据URL显示组件(注意：这里一定要可以用使用self.window，不然当前宏不可用！)
 //    XF_ShowURLComponent2Window_Fast(@"rac://Login")
-    XF_ShowURLComponent2Window_(@"rac://Login?nav=UI", {
+    //行为参数nav，目前仅支持一个。nav=UI 告知下一个页面需要导航栏
+    XF_ShowURLComponent2Window_(@"rac://Login?nav=Lego", {
+        //拿到界面对象，
+        UIViewController *nextVC =  nextInterface;
+        nextVC.title = @"登录";
+        // 自定义导航栏 Lego前缀，集成系统导航栏，这时就可以在URl上nav=Lego即可。
+        
         // 配置导航栏
-        UINavigationController *navigation = nextInterface.navigationController;
-        navigation.navigationBar.barTintColor = [UIColor colorWithRed:217/255.0 green:108/255.0 blue:0/255.0 alpha:1];
-        [navigation.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+//        UINavigationController *navigation = nextVC.navigationController;
+//        navigation.navigationBar.barTintColor = [UIColor colorWithRed:217/255.0 green:108/255.0 blue:0/255.0 alpha:1];
+//        [navigation.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     })
     return YES;
 }

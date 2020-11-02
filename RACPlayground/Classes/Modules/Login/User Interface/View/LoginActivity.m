@@ -91,7 +91,9 @@
     // 双向数据绑定
     //XF_$_(self.textField, text, EventHandler, text)
     // 绑定事件层按钮命令:代替Action/target模式
+    // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)
+
     
     // load or reset expressPack
     /*XF_Define_Weak

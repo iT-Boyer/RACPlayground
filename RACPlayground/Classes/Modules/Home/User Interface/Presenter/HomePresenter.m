@@ -1,27 +1,27 @@
 //
-//  LoginPresenter.m
+//  HomePresenter.m
 //  RACPlayground
 //
-//  Created by jhmac on 2020/11/2.
+//  Created by iTBoyer on 2020/11/2.
 //  
 //
 
-#import "LoginPresenter.h"
-#import "LoginWireframePort.h"
-#import "LoginUserInterfacePort.h"
-#import "LoginInteractorPort.h"
+#import "HomePresenter.h"
+#import "HomeWireframePort.h"
+#import "HomeUserInterfacePort.h"
+#import "HomeInteractorPort.h"
 //#import "ReactiveCocoa.h"
 
 
-#define Interactor XFConvertInteractorToType(id<LoginInteractorPort>)
-#define Interface XFConvertUserInterfaceToType(id<LoginUserInterfacePort>)
-#define Routing XFConvertRoutingToType(id<LoginWireFramePort>)
+#define Interactor XFConvertInteractorToType(id<HomeInteractorPort>)
+#define Interface XFConvertUserInterfaceToType(id<HomeUserInterfacePort>)
+#define Routing XFConvertRoutingToType(id<HomeWireFramePort>)
 
-@interface LoginPresenter ()
+@interface HomePresenter ()
 
 @end
 
-@implementation LoginPresenter
+@implementation HomePresenter
 
 #pragma mark - lifeCycle
 // 绑定视图层后调用
@@ -41,20 +41,11 @@
 // 初始化命令
 - (void)initCommand
 {
-    XF_CEXE_Begin
+    /*XF_CEXE_Begin
     // 当命令触发时执行代码
-    XF_CEXE_(self.loginCommand, {
+    XF_CEXE_(self.command, {
         // TODO
-        [self loginAction];
-    })
-    /* 上述代码 等价于
-    XF_Define_Weak
-    self.loginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        XF_Define_Strong
-        NSLog(@"登录");
-        return [RACSignal empty];
-    }];
-     */
+    })*/
 }
 
 // 接收到组件返回数据
@@ -81,10 +72,7 @@
 }
 
 #pragma mark - DoAction
--(void)loginAction
-{
-    NSLog(@"点击了登录按钮，开始登录...");
-}
+
 
 
 #pragma mark - ValidData
