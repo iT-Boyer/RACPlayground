@@ -31,10 +31,21 @@
 
 #pragma mark - 初始化
 - (void)config {
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)setUpViews {
+    // username password
+    
+    UITextField *usernameField = [UITextField new];
+    UITextField *passwordField = [UITextField new];
+    
+    //layout
+    [self.view addSubview:usernameField];
+    [self.view addSubview:passwordField];
+    
+//    [usernameField mas_ma];
+    
     
 }
 

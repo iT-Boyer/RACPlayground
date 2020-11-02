@@ -100,6 +100,7 @@
 		F97875C6254FB06A00B75702 /* LoginRouting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRouting.m; sourceTree = "<group>"; };
 		F97875C8254FB06A00B75702 /* LoginActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginActivity.m; sourceTree = "<group>"; };
 		F97875C9254FB06A00B75702 /* LoginActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginActivity.h; sourceTree = "<group>"; };
+		F978774A254FBBB800B75702 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F9D95A3D254D660400F39CAD /* RWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWViewController.m; sourceTree = "<group>"; };
 		F9D95A3E254D660400F39CAD /* RWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +179,7 @@
 				F97876B6254FB93500B75702 /* Resources */,
 				F931B306254D536600C215A5 /* main.m */,
 				F931B305254D536600C215A5 /* Info.plist */,
+				F978774A254FBBB800B75702 /* PrefixHeader.pch */,
 			);
 			path = RACPlayground;
 			sourceTree = "<group>";
@@ -721,6 +723,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = RACPlayground/PrefixHeader.pch;
 				INFOPLIST_FILE = RACPlayground/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -740,6 +744,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = RACPlayground/PrefixHeader.pch;
 				INFOPLIST_FILE = RACPlayground/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (

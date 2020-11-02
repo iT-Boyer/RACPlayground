@@ -28,6 +28,7 @@
         
         // make the status bar white
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+        
 //        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //        [self.window setBackgroundColor:[UIColor whiteColor]];
 //
