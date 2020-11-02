@@ -177,7 +177,6 @@
 			children = (
 				F978756C254FAFF900B75702 /* Classes */,
 				F97876B6254FB93500B75702 /* Resources */,
-				F931B306254D536600C215A5 /* main.m */,
 				F931B305254D536600C215A5 /* Info.plist */,
 				F978774A254FBBB800B75702 /* PrefixHeader.pch */,
 			);
@@ -244,10 +243,7 @@
 				F97876B7254FB95900B75702 /* MVC */,
 				F978756D254FB00800B75702 /* Common */,
 				F978756B254FAFD500B75702 /* Modules */,
-				F931B2F4254D536300C215A5 /* AppDelegate.h */,
-				F931B2F5254D536300C215A5 /* AppDelegate.m */,
-				F931B2F7254D536300C215A5 /* SceneDelegate.h */,
-				F931B2F8254D536300C215A5 /* SceneDelegate.m */,
+				F9787986254FC5BD00B75702 /* Main */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -363,6 +359,18 @@
 				F931B32C254D53F900C215A5 /* Controller */,
 			);
 			path = MVC;
+			sourceTree = "<group>";
+		};
+		F9787986254FC5BD00B75702 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F931B2F4254D536300C215A5 /* AppDelegate.h */,
+				F931B2F5254D536300C215A5 /* AppDelegate.m */,
+				F931B2F7254D536300C215A5 /* SceneDelegate.h */,
+				F931B2F8254D536300C215A5 /* SceneDelegate.m */,
+				F931B306254D536600C215A5 /* main.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

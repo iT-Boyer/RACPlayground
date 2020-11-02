@@ -12,5 +12,6 @@
 
 @interface LoginPresenter : XFPresenter <LoginEventHandlerPort>
 
+@property (nonatomic, strong) RACCommand *loginCommand;
 
 @end

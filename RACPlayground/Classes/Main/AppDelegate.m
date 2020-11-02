@@ -21,22 +21,33 @@
 
     } else {
         
-        UIColor* navColor = [UIColor colorWithRed:0.175f green:0.458f blue:0.831f alpha:1.0f];
-        [[UINavigationBar appearance] setBarTintColor:navColor];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-        
-        // make the status bar white
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-        
-//        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//        [self.window setBackgroundColor:[UIColor whiteColor]];
-//
-//        ViewController *con = [[ViewController alloc] init];
-//        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:con];
-//        [self.window setRootViewController:nav];
-//        [self.window makeKeyAndVisible];
     }
+    UIColor* navColor = [UIColor colorWithRed:0.175f green:0.458f blue:0.831f alpha:1.0f];
+    [[UINavigationBar appearance] setBarTintColor:navColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    // make the status bar white
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    // 配置乐高框架 // 使有默认配置
+    [[XFLegoConfig defaultConfig] enableLog]; // 允许打印log
+    
+    // 注册APP的所有URL
+    [XFURLRoute initURLGroup:@[
+                                 @"rac://Login", // 测试跳转
+                                 ]];
+    
+    // 根据URL显示组件(注意：这里一定要可以用使用self.window，不然当前宏不可用！)
+//    XF_ShowURLComponent2Window_Fast(@"rac://Login")
+    XF_ShowURLComponent2Window_(@"rac://Login?nav=UI", {
+        // 配置导航栏
+        UINavigationController *navigation = nextInterface.navigationController;
+        navigation.navigationBar.barTintColor = [UIColor colorWithRed:217/255.0 green:108/255.0 blue:0/255.0 alpha:1];
+        [navigation.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    })
     return YES;
 }
 

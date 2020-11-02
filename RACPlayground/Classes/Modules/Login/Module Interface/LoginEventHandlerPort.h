@@ -10,5 +10,5 @@
 #import "XFEventHandlerPort.h"
 
 @protocol LoginEventHandlerPort <XFEventHandlerPort>
-
+@property (nonatomic, strong) RACCommand *loginCommand;
 @end
