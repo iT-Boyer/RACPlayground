@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2DB9C66680B3AF6CD25DD96E /* Pods_RACPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE62FBD2015793094458632A /* Pods_RACPlayground.framework */; };
 		F931B2F6254D536300C215A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F931B2F5254D536300C215A5 /* AppDelegate.m */; };
-		F931B2FC254D536300C215A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F931B2FB254D536300C215A5 /* ViewController.m */; };
 		F931B2FF254D536300C215A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B2FD254D536300C215A5 /* Main.storyboard */; };
 		F931B301254D536600C215A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F931B300254D536600C215A5 /* Assets.xcassets */; };
 		F931B304254D536600C215A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B302254D536600C215A5 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,11 @@
 		F931B336254D541B00C215A5 /* RWDummySignInService.m in Sources */ = {isa = PBXBuildFile; fileRef = F931B334254D541B00C215A5 /* RWDummySignInService.m */; };
 		F931B33B254D542A00C215A5 /* kitten.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F931B33A254D542A00C215A5 /* kitten.jpg */; };
 		F931B348254D558300C215A5 /* Pods_RACPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1489E75787D5D8C9029B0004 /* Pods_RACPlayground.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F97875CA254FB06A00B75702 /* LoginDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F97875BB254FB06A00B75702 /* LoginDataManager.m */; };
+		F97875CB254FB06A00B75702 /* LoginInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F97875BF254FB06A00B75702 /* LoginInteractor.m */; };
+		F97875CC254FB06A00B75702 /* LoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F97875C2254FB06A00B75702 /* LoginPresenter.m */; };
+		F97875CD254FB06A00B75702 /* LoginRouting.m in Sources */ = {isa = PBXBuildFile; fileRef = F97875C6254FB06A00B75702 /* LoginRouting.m */; };
+		F97875CE254FB06A00B75702 /* LoginActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F97875C8254FB06A00B75702 /* LoginActivity.m */; };
 		F9D95A3F254D660400F39CAD /* RWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D95A3D254D660400F39CAD /* RWViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +68,6 @@
 		F931B2F5254D536300C215A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F931B2F7254D536300C215A5 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F931B2F8254D536300C215A5 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		F931B2FA254D536300C215A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F931B2FB254D536300C215A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F931B2FE254D536300C215A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F931B300254D536600C215A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F931B303254D536600C215A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,21 @@
 		F931B335254D541B00C215A5 /* RWDummySignInService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDummySignInService.h; sourceTree = "<group>"; };
 		F931B33A254D542A00C215A5 /* kitten.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kitten.jpg; sourceTree = "<group>"; };
 		F931B4F4254D5D4900C215A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F97875B4254FB06A00B75702 /* LoginInteractorPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInteractorPort.h; sourceTree = "<group>"; };
+		F97875B5254FB06A00B75702 /* LoginUserInterfacePort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUserInterfacePort.h; sourceTree = "<group>"; };
+		F97875B6254FB06A00B75702 /* LoginWireframePort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWireframePort.h; sourceTree = "<group>"; };
+		F97875B7254FB06A00B75702 /* LoginEventHandlerPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginEventHandlerPort.h; sourceTree = "<group>"; };
+		F97875B8254FB06A00B75702 /* LoginDataManagerPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDataManagerPort.h; sourceTree = "<group>"; };
+		F97875BB254FB06A00B75702 /* LoginDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginDataManager.m; sourceTree = "<group>"; };
+		F97875BC254FB06A00B75702 /* LoginDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDataManager.h; sourceTree = "<group>"; };
+		F97875BE254FB06A00B75702 /* LoginInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInteractor.h; sourceTree = "<group>"; };
+		F97875BF254FB06A00B75702 /* LoginInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInteractor.m; sourceTree = "<group>"; };
+		F97875C2254FB06A00B75702 /* LoginPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPresenter.m; sourceTree = "<group>"; };
+		F97875C3254FB06A00B75702 /* LoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPresenter.h; sourceTree = "<group>"; };
+		F97875C5254FB06A00B75702 /* LoginRouting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRouting.h; sourceTree = "<group>"; };
+		F97875C6254FB06A00B75702 /* LoginRouting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRouting.m; sourceTree = "<group>"; };
+		F97875C8254FB06A00B75702 /* LoginActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginActivity.m; sourceTree = "<group>"; };
+		F97875C9254FB06A00B75702 /* LoginActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginActivity.h; sourceTree = "<group>"; };
 		F9D95A3D254D660400F39CAD /* RWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWViewController.m; sourceTree = "<group>"; };
 		F9D95A3E254D660400F39CAD /* RWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +174,7 @@
 		F931B2F3254D536300C215A5 /* RACPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				F978756C254FAFF900B75702 /* Classes */,
 				F931B33A254D542A00C215A5 /* kitten.jpg */,
 				F931B333254D541300C215A5 /* Server */,
 				F931B32C254D53F900C215A5 /* Controller */,
@@ -164,8 +182,6 @@
 				F931B2F5254D536300C215A5 /* AppDelegate.m */,
 				F931B2F7254D536300C215A5 /* SceneDelegate.h */,
 				F931B2F8254D536300C215A5 /* SceneDelegate.m */,
-				F931B2FA254D536300C215A5 /* ViewController.h */,
-				F931B2FB254D536300C215A5 /* ViewController.m */,
 				F931B2FD254D536300C215A5 /* Main.storyboard */,
 				F931B300254D536600C215A5 /* Assets.xcassets */,
 				F931B302254D536600C215A5 /* LaunchScreen.storyboard */,
@@ -219,6 +235,116 @@
 				1489E75787D5D8C9029B0004 /* Pods_RACPlayground.framework */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		F978756B254FAFD500B75702 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F97875B2254FB06A00B75702 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F978756C254FAFF900B75702 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F978756D254FB00800B75702 /* Common */,
+				F978756B254FAFD500B75702 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F978756D254FB00800B75702 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F97875B2254FB06A00B75702 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F97875B3254FB06A00B75702 /* Module Interface */,
+				F97875B9254FB06A00B75702 /* Application Logic */,
+				F97875C0254FB06A00B75702 /* User Interface */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F97875B3254FB06A00B75702 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F97875B8254FB06A00B75702 /* LoginDataManagerPort.h */,
+				F97875B7254FB06A00B75702 /* LoginEventHandlerPort.h */,
+				F97875B4254FB06A00B75702 /* LoginInteractorPort.h */,
+				F97875B5254FB06A00B75702 /* LoginUserInterfacePort.h */,
+				F97875B6254FB06A00B75702 /* LoginWireframePort.h */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		F97875B9254FB06A00B75702 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F97875BA254FB06A00B75702 /* DataManager */,
+				F97875BD254FB06A00B75702 /* Interactor */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		F97875BA254FB06A00B75702 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F97875BC254FB06A00B75702 /* LoginDataManager.h */,
+				F97875BB254FB06A00B75702 /* LoginDataManager.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		F97875BD254FB06A00B75702 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F97875BE254FB06A00B75702 /* LoginInteractor.h */,
+				F97875BF254FB06A00B75702 /* LoginInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F97875C0254FB06A00B75702 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F97875C7254FB06A00B75702 /* View */,
+				F97875C1254FB06A00B75702 /* Presenter */,
+				F97875C4254FB06A00B75702 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		F97875C1254FB06A00B75702 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F97875C3254FB06A00B75702 /* LoginPresenter.h */,
+				F97875C2254FB06A00B75702 /* LoginPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F97875C4254FB06A00B75702 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				F97875C5254FB06A00B75702 /* LoginRouting.h */,
+				F97875C6254FB06A00B75702 /* LoginRouting.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		F97875C7254FB06A00B75702 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F97875C9254FB06A00B75702 /* LoginActivity.h */,
+				F97875C8254FB06A00B75702 /* LoginActivity.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,10 +522,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97875CB254FB06A00B75702 /* LoginInteractor.m in Sources */,
+				F97875CA254FB06A00B75702 /* LoginDataManager.m in Sources */,
 				F9D95A3F254D660400F39CAD /* RWViewController.m in Sources */,
-				F931B2FC254D536300C215A5 /* ViewController.m in Sources */,
+				F97875CD254FB06A00B75702 /* LoginRouting.m in Sources */,
 				F931B2F6254D536300C215A5 /* AppDelegate.m in Sources */,
 				F931B307254D536600C215A5 /* main.m in Sources */,
+				F97875CC254FB06A00B75702 /* LoginPresenter.m in Sources */,
+				F97875CE254FB06A00B75702 /* LoginActivity.m in Sources */,
 				F931B32F254D540400C215A5 /* RACViewController.m in Sources */,
 				F931B336254D541B00C215A5 /* RWDummySignInService.m in Sources */,
 			);

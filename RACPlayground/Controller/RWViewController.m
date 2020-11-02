@@ -135,6 +135,7 @@
             [subscriber sendNext:@(success)];
             [subscriber sendCompleted];
         }];
+        return nil;
     }];
     return sign;
 }
