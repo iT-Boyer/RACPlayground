@@ -31,13 +31,29 @@
 
 #pragma mark - 初始化
 - (void)config {
-    
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 - (void)setUpViews {
+    //导航条
+    self.navigationItem.title = @"主页";
+    UIButton *backBtn = [UIButton new];
+    [backBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backItem;
+    [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchDown];
     
 }
 
+-(void)backAction:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(UIModalPresentationStyle)modalPresentationStyle
+{
+    return UIModalPresentationFullScreen;
+}
 - (void)bindViewData {
     // 双向数据绑定
     //XF_$_(self.textField, text, EventHandler, text)

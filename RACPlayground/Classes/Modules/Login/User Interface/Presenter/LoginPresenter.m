@@ -10,7 +10,6 @@
 #import "LoginWireframePort.h"
 #import "LoginUserInterfacePort.h"
 #import "LoginInteractorPort.h"
-//#import "ReactiveCocoa.h"
 
 
 #define Interactor XFConvertInteractorToType(id<LoginInteractorPort>)
@@ -46,6 +45,7 @@
     XF_CEXE_(self.loginCommand, {
         // TODO
         [self loginAction];
+        [Routing transition2home];
     })
     /* 上述代码 等价于
     XF_Define_Weak
@@ -84,6 +84,7 @@
 -(void)loginAction
 {
     NSLog(@"点击了登录按钮，开始登录...");
+    
 }
 
 
