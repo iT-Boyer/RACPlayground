@@ -12,6 +12,8 @@
 #define EventHandler  XFConvertPresenterToType(id<LoginEventHandlerPort>)
 
 @interface LoginActivity ()
+@property (strong, nonatomic) UITextField *userNameField;
+@property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UIButton *loginBtn;
 @end
 
@@ -46,6 +48,8 @@
     UITextField *passwordField = [UITextField new];
     UIButton *loginBtn = [UIButton new];
     self.loginBtn = loginBtn;
+    self.userNameField = usernameField;
+    self.passwordField = passwordField;
     
     passwordField.secureTextEntry = true;
     usernameField.borderStyle = UITextBorderStyleRoundedRect;
@@ -89,12 +93,24 @@
 
 - (void)bindViewData {
     // 双向数据绑定
-    //XF_$_(self.textField, text, EventHandler, text)
+    XF_$_Input(self.userNameField, text, EventHandler, userName)
+    /*等价于RAC方式
+     RAC(EventHandler, userName) = [self.userNameField.rac_textSignal distinctUntilChanged];
+     [RACObserve(EventHandler, userName) subscribe:RACChannelTo(self.userNameField, text)];
+     */
+//    RAC(EventHandler, userName)
     // 绑定事件层按钮命令:代替Action/target模式
     // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)
 
-    
+    [[EventHandler loginCommand].executionSignals subscribeNext:^(RACSignal *signal) {
+        //信号不管是异步还是同步，会立即返回一个可取消的对象
+        signal subscribeNext:^(id x) {
+            NSLog(@"%@",x);
+        }
+        //取消信号
+        
+    }];
     // load or reset expressPack
     /*XF_Define_Weak
      [RACObserve(self.eventHandler, expressPack) subscribeNext:^(id x) {

@@ -44,8 +44,20 @@
     // 当命令触发时执行代码
     XF_CEXE_(self.loginCommand, {
         // TODO
+        //隐藏键盘
+//        [self dismissKeyboard];
         [self loginAction];
         [Routing transition2home];
+        //意图数据，可以传递任何对象
+        self.intentData = self.userName;
+        // 返回信号 ：从展示层返回给视图层，视图层监听信号返回的数据。
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [subscriber sendNext:@"完成"];
+            [subscriber sendCompleted];
+            return [RACDisposable disposableWithBlock:^{
+                NSLog(@"当前信号已中止！")
+            }];
+        }];
     })
     /* 上述代码 等价于
     XF_Define_Weak

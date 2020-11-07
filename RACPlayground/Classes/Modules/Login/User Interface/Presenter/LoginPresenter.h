@@ -13,5 +13,5 @@
 @interface LoginPresenter : XFPresenter <LoginEventHandlerPort>
 
 @property (nonatomic, strong) RACCommand *loginCommand;
-
+@property (strong, nonatomic) NSString *userName;
 @end
