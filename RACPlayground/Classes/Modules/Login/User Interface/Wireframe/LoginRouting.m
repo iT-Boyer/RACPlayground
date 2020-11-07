@@ -19,7 +19,8 @@ XF_AutoAssemblyModule_Fast
 -(void)transition2JHVC
 {
     RACViewController *racVC = [RACViewController new];
-    [UIView];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:racVC];
+    [[UIViewController topMostController] presentViewController:nav animated:NO completion:nil];
 }
 
 // 跳转组件

@@ -41,6 +41,10 @@
 - (void)initCommand
 {
     XF_CEXE_Begin
+    //跳转MVC
+    XF_CEXE_(self.mvcCommand, {
+        [Routing transition2JHVC];
+    })
     // 当命令触发时执行代码
     XF_CEXE_(self.loginCommand, {
         // TODO

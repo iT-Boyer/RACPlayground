@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UITextField *userNameField;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UIButton *loginBtn;
+@property (strong, nonatomic) UIButton *mvcBtn;
 @end
 
 @implementation LoginActivity
@@ -39,6 +40,17 @@
 #pragma mark - 初始化
 - (void)config {
     self.view.backgroundColor = [UIColor whiteColor];
+    ///添加两种跳转方式
+    //1. viper直接跳转原生mvc框架：不导出模块的情况下
+    //2. 原生直接跳转到viper： 以展示层为入口进行跳转
+    UIButton *mvcBtn = [UIButton new];
+    self.mvcBtn = mvcBtn;
+    [mvcBtn setTitle:@"跳转到mvc层框架" forState:UIControlStateNormal];
+    //布局
+    [self.view addSubview:mvcBtn];
+    [mvcBtn mas_makeConstraints:^(MASConstraintMaker *make){
+        make.center.equalTo(self.view);
+    }];
 }
 
 - (void)setUpViews {
@@ -102,7 +114,8 @@
     // 绑定事件层按钮命令:代替Action/target模式
     // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)
-
+    XF_C_(self.mvcBtn, EventHandler, mvcCommand)
+    
     [[EventHandler loginCommand].executionSignals subscribeNext:^(RACSignal *signal) {
         //信号不管是异步还是同步，会立即返回一个可取消的对象
         [signal subscribeNext:^(id x) {
