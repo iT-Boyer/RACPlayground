@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abp-lG-JSc">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abp-lG-JSc">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +50,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynr-dd-2c4">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynr-dd-2c4">
                                 <rect key="frame" x="192" y="201" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In">
@@ -65,10 +68,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="SK4-Ab-5ir"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SK4-Ab-5ir"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reactive Sign In" id="HQW-b6-pNP"/>
+                    <navigationItem key="navigationItem" title="Reactive Sign In" id="HQW-b6-pNP">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="Lof-uY-aNw">
+                            <connections>
+                                <action selector="backAction:" destination="lxv-Kr-ouR" id="lPF-fY-5MD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="passwordTextField" destination="6t4-f5-5Bg" id="Ggl-uO-9Wy"/>
                         <outlet property="signInButton" destination="ynr-dd-2c4" id="1bk-LU-PFf"/>
@@ -98,17 +107,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.flickr.com/photos/50362297@N07" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovv-QO-P1z">
-                                <rect key="frame" x="20" y="831" width="201" height="11"/>
+                                <rect key="frame" x="20" y="831" width="202" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="1VT-ff-OZu"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g7Z-l7-ukH" firstAttribute="top" secondItem="Ovv-QO-P1z" secondAttribute="bottom" constant="20" id="oE9-1w-bUj"/>
                             <constraint firstItem="Ovv-QO-P1z" firstAttribute="leading" secondItem="mEm-ad-muK" secondAttribute="leading" constant="20" id="vgQ-qV-AtP"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="1VT-ff-OZu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Kitten!" id="FOy-bX-6nm"/>
                 </viewController>
@@ -118,6 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="kitten.jpg" width="128.8800048828125" height="177.60000610351562"/>
+        <image name="kitten.jpg" width="537" height="740"/>
     </resources>
 </document>

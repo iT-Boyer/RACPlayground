@@ -46,6 +46,7 @@
     UIButton *mvcBtn = [UIButton new];
     self.mvcBtn = mvcBtn;
     [mvcBtn setTitle:@"跳转到mvc层框架" forState:UIControlStateNormal];
+    [mvcBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     //布局
     [self.view addSubview:mvcBtn];
     [mvcBtn mas_makeConstraints:^(MASConstraintMaker *make){

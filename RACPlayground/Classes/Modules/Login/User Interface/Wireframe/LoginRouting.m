@@ -8,7 +8,7 @@
 
 
 #import "LoginRouting.h"
-#import "RACViewController.h"
+#import "RWViewController.h"
 #import "UIViewController+topmost.h"
 @implementation LoginRouting
 
@@ -18,8 +18,10 @@ XF_AutoAssemblyModule_Fast
 //原生跳转到金和组件
 -(void)transition2JHVC
 {
-    RACViewController *racVC = [RACViewController new];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:racVC];
+//    RWViewController *racVC = [RWViewController new];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:racVC];
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *nav = [main instantiateInitialViewController];
     [[UIViewController topMostController] presentViewController:nav animated:NO completion:nil];
 }
 
