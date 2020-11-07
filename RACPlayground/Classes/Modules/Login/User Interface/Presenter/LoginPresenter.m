@@ -46,7 +46,6 @@
         // TODO
         //隐藏键盘
 //        [self dismissKeyboard];
-        [self loginAction];
         [Routing transition2home];
         //意图数据，可以传递任何对象
         self.intentData = self.userName;
@@ -55,7 +54,7 @@
             [subscriber sendNext:@"完成"];
             [subscriber sendCompleted];
             return [RACDisposable disposableWithBlock:^{
-                NSLog(@"当前信号已中止！")
+                NSLog(@"当前信号已中止！");
             }];
         }];
     })

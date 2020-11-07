@@ -11,4 +11,5 @@
 
 @protocol LoginEventHandlerPort <XFEventHandlerPort>
 @property (nonatomic, strong) RACCommand *loginCommand;
+@property (strong, nonatomic) NSString *userName;
 @end

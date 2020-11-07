@@ -23,9 +23,9 @@ XF_AutoAssemblyModule_Fast
     //navTitle=导航名  @"rac://Home?nav=UI"
     //XF_URL_支持动态编码参数,
     NSString *url = XF_URL_(@"rac://home", (@{
-                              @"type":name,
+                              @"type":@"hello",
                               @"id":@123
-                              }))
+                              }));
     XF_Present_URLComponent_Fast(url)
     
     //自定义样式： 不需要动画时

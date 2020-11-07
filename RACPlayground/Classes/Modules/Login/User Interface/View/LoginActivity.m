@@ -105,9 +105,9 @@
 
     [[EventHandler loginCommand].executionSignals subscribeNext:^(RACSignal *signal) {
         //信号不管是异步还是同步，会立即返回一个可取消的对象
-        signal subscribeNext:^(id x) {
+        [signal subscribeNext:^(id x) {
             NSLog(@"%@",x);
-        }
+        }];
         //取消信号
         
     }];
