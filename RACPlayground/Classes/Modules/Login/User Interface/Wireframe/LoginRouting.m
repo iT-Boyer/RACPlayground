@@ -8,11 +8,19 @@
 
 
 #import "LoginRouting.h"
-
+#import "RACViewController.h"
+#import "UIViewController+topmost.h"
 @implementation LoginRouting
 
 // 组装模块
 XF_AutoAssemblyModule_Fast
+
+//原生跳转到金和组件
+-(void)transition2JHVC
+{
+    RACViewController *racVC = [RACViewController new];
+    [UIView];
+}
 
 // 跳转组件
 - (void)transition2homeWith:(NSString *)userId

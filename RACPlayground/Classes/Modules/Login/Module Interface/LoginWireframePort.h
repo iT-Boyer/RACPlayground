@@ -11,4 +11,5 @@
 
 @protocol LoginWireFramePort <XFWireFramePort>
 - (void)transition2homeWith:(NSString *)userId;
+- (void)transition2JHVC;
 @end

@@ -7,7 +7,8 @@ target 'RACPlayground' do
 
   # Pods for RACPlayground
   pod 'ReactiveCocoa', '~> 2.5'
- 
+  pod 'Masonry'
+  pod 'XFLegoVIPER', '~> 4.0'
   target 'RACPlaygroundTests' do
     inherit! :search_paths
     # Pods for testing
