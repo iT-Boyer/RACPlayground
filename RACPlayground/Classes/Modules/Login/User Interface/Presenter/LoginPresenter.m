@@ -46,7 +46,7 @@
         // TODO
         //隐藏键盘
 //        [self dismissKeyboard];
-        [Routing transition2home];
+        [Routing transition2homeWith:@"useriiii"];
         //意图数据，可以传递任何对象
         self.intentData = self.userName;
         // 返回信号 ：从展示层返回给视图层，视图层监听信号返回的数据。

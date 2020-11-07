@@ -15,7 +15,7 @@
 XF_AutoAssemblyModule_Fast
 
 // 跳转组件
-- (void)transition2home
+- (void)transition2homeWith:(NSString *)userId
 {
 //    XF_PUSH_URLComponent_Fast(@"xxx:index/user?id=151&name=yizzuide")
     //nav
@@ -23,8 +23,7 @@ XF_AutoAssemblyModule_Fast
     //navTitle=导航名  @"rac://Home?nav=UI"
     //XF_URL_支持动态编码参数,
     NSString *url = XF_URL_(@"rac://home", (@{
-                              @"type":@"hello",
-                              @"id":@123
+                              @"id":userId
                               }));
     XF_Present_URLComponent_Fast(url)
     

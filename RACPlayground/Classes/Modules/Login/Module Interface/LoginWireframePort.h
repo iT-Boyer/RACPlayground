@@ -10,5 +10,5 @@
 #import "XFWireFramePort.h"
 
 @protocol LoginWireFramePort <XFWireFramePort>
-- (void)transition2home;
+- (void)transition2homeWith:(NSString *)userId;
 @end
