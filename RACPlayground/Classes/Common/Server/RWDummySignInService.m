@@ -8,7 +8,7 @@
 
 #import "RWDummySignInService.h"
 #import <AFNetworking/AFNetworking.h>
-#import <AFNetworking-RACExtensions/RACAFNetworking.h>
+#import <AFNetworking-RACExtensions-umbrella.h>
 
 @implementation RWDummySignInService
 
@@ -40,8 +40,8 @@
                                                                        @"user":name,
                                                                        @"name":pwd
                                                                        }];
-    RACSignal *result = [signIn map:^id(BOOL value) {
-        return @(false);
+    RACSignal *result = [signIn map:^id(NSNumber *value) {
+        return [NSNumber numberWithBool:true];
     }];
     return result;
 }
