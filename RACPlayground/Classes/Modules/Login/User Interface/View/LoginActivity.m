@@ -28,6 +28,8 @@
     [self config];
     // 初始化视图
     [self setUpViews];
+    // RAC 绑定状态
+    [self racBind];
     // 绑定视图数据
     [self bindViewData];
 }
@@ -103,20 +105,14 @@
     }];
 }
 
-- (void)bindViewData {
-    // 双向数据绑定 XF_$_Input只对输入框内容text数据进行同步。无法对背景色同步，XF_$_可以对任意数据同步。
-    /*等价于RAC方式
-     RAC(EventHandler, userName) = [self.userNameField.rac_textSignal distinctUntilChanged];
-     [RACObserve(EventHandler, userName) subscribe:RACChannelTo(self.userNameField, text)];
-     */
-    XF_$_Input(self.userNameField, text, EventHandler, userName)
-    XF_$_(self.userNameField, backgroundColor, EventHandler, userNameBackgroundColor)
+-(void)racBind
+{
     //
-//    [[self.userNameField.rac_textSignal filter:^BOOL(NSString *text) {
-//        return text.length > 3;
-//    }] subscribeNext:^(id x) {
-//        self.userNameField.backgroundColor = [UIColor orangeColor];
-//    }];
+    //    [[self.userNameField.rac_textSignal filter:^BOOL(NSString *text) {
+    //        return text.length > 3;
+    //    }] subscribeNext:^(id x) {
+    //        self.userNameField.backgroundColor = [UIColor orangeColor];
+    //    }];
     //背景色属性信号：校验内容长度，并改变输入框背景色。
     // 关于输入框内容改变的事件，无法通过XF_C_宏的方式监听，只能通过RAC原生代码实现
     RACSignal *usernameValid = [self.userNameField.rac_textSignal map:^id(id value) {
@@ -144,6 +140,17 @@
     [signUpdateActiveSignal subscribeNext:^(NSNumber *active) {
         self.loginBtn.enabled = active.boolValue;
     }];
+}
+
+- (void)bindViewData {
+    // 双向数据绑定 XF_$_Input只对输入框内容text数据进行同步。无法对背景色同步，XF_$_可以对任意数据同步。
+    /*等价于RAC方式
+     RAC(EventHandler, userName) = [self.userNameField.rac_textSignal distinctUntilChanged];
+     [RACObserve(EventHandler, userName) subscribe:RACChannelTo(self.userNameField, text)];
+     */
+    XF_$_Input(self.userNameField, text, EventHandler, userName)
+    XF_$_Input(self.passwordField, text, EventHandler, password)
+   
     // 绑定事件层按钮命令:代替Action/target模式
     // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)

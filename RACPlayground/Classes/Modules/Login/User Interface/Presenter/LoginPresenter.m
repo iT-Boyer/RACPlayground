@@ -12,12 +12,14 @@
 #import "LoginInteractorPort.h"
 
 
+#import "RWDummySignInService.h"
+
 #define Interactor XFConvertInteractorToType(id<LoginInteractorPort>)
 #define Interface XFConvertUserInterfaceToType(id<LoginUserInterfacePort>)
 #define Routing XFConvertRoutingToType(id<LoginWireFramePort>)
 
 @interface LoginPresenter ()
-
+@property (strong, nonatomic) RWDummySignInService *signInService;
 @end
 
 @implementation LoginPresenter
@@ -45,26 +47,29 @@
     XF_CEXE_(self.mvcCommand, {
         [Routing transition2JHVC];
     })
-    XF_CEXE_(self.userValidCommand, {
-        if (self.userName.length > 3) {
-            self.userNameBackgroundColor = [UIColor redColor];
-        }
-    })
-    XF_CEXE_(self.pwdValidCommand, {
-        
-    })
+    
+    self.signInService = [RWDummySignInService new];
     // 当命令触发时执行代码
     XF_CEXE_(self.loginCommand, {
         // TODO
         //隐藏键盘
 //        [self dismissKeyboard];
-        [Routing transition2homeWith:@"useriiii"];
         //意图数据，可以传递任何对象
         self.intentData = self.userName;
         // 返回信号 ：从展示层返回给视图层，视图层监听信号返回的数据。
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            [subscriber sendNext:@"完成"];
-            [subscriber sendCompleted];
+            //异步访问网络，请求服务器数据
+            [self.signInService signInWithUsername:self.userName password:self.password complete:^(BOOL success) {
+                [subscriber sendNext:@(success)];
+                if (success) {
+                    //登录成功进入home
+                    [Routing transition2homeWith:@"useriiii"];
+                }
+                [subscriber sendCompleted];
+            }];
+            
+//            [subscriber sendNext:@"完成"];
+//            [subscriber sendCompleted];
             return [RACDisposable disposableWithBlock:^{
                 NSLog(@"当前信号已中止！");
             }];
