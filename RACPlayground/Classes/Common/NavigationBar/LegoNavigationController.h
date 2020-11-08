@@ -6,10 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
 NS_ASSUME_NONNULL_BEGIN
-
-@interface LegoViewController : UINavigationController
+//XFLego框架约定：前缀后面的名称内容必须是NavigationCtoller
+@interface LegoNavigationController : UINavigationController
 
 @end
 

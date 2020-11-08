@@ -18,7 +18,7 @@
 		A4047DC62556D5CA0099CFC6 /* UIViewController+topmost.m in Sources */ = {isa = PBXBuildFile; fileRef = A4047DBA2556D5CA0099CFC6 /* UIViewController+topmost.m */; };
 		A4047DC72556D5CA0099CFC6 /* UIView+WaterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = A4047DBD2556D5CA0099CFC6 /* UIView+WaterMark.m */; };
 		A4047DC82556D5CA0099CFC6 /* UIButton+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = A4047DBF2556D5CA0099CFC6 /* UIButton+Ext.m */; };
-		A41A387725504BE7003810AD /* LegoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A387625504BE6003810AD /* LegoViewController.m */; };
+		A41A387725504BE7003810AD /* LegoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A387625504BE6003810AD /* LegoNavigationController.m */; };
 		A41A389225504DAC003810AD /* HomeDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388325504DAC003810AD /* HomeDataManager.m */; };
 		A41A389325504DAC003810AD /* HomeInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388725504DAC003810AD /* HomeInteractor.m */; };
 		A41A389425504DAC003810AD /* HomePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A388B25504DAC003810AD /* HomePresenter.m */; };
@@ -100,8 +100,8 @@
 		A4047DBD2556D5CA0099CFC6 /* UIView+WaterMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WaterMark.m"; sourceTree = "<group>"; };
 		A4047DBE2556D5CA0099CFC6 /* UIColor+Translate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Translate.h"; sourceTree = "<group>"; };
 		A4047DBF2556D5CA0099CFC6 /* UIButton+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Ext.m"; sourceTree = "<group>"; };
-		A41A387525504BE6003810AD /* LegoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegoViewController.h; sourceTree = "<group>"; };
-		A41A387625504BE6003810AD /* LegoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegoViewController.m; sourceTree = "<group>"; };
+		A41A387525504BE6003810AD /* LegoNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegoNavigationController.h; sourceTree = "<group>"; };
+		A41A387625504BE6003810AD /* LegoNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegoNavigationController.m; sourceTree = "<group>"; };
 		A41A387C25504DAC003810AD /* HomeDataManagerPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataManagerPort.h; sourceTree = "<group>"; };
 		A41A387D25504DAC003810AD /* HomeWireframePort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWireframePort.h; sourceTree = "<group>"; };
 		A41A387E25504DAC003810AD /* HomeInteractorPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInteractorPort.h; sourceTree = "<group>"; };
@@ -219,8 +219,8 @@
 		A41A387325504B80003810AD /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				A41A387525504BE6003810AD /* LegoViewController.h */,
-				A41A387625504BE6003810AD /* LegoViewController.m */,
+				A41A387525504BE6003810AD /* LegoNavigationController.h */,
+				A41A387625504BE6003810AD /* LegoNavigationController.m */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -823,7 +823,7 @@
 				A4047DC12556D5CA0099CFC6 /* UIView+Ext.m in Sources */,
 				F931B307254D536600C215A5 /* main.m in Sources */,
 				F97875CC254FB06A00B75702 /* LoginPresenter.m in Sources */,
-				A41A387725504BE7003810AD /* LegoViewController.m in Sources */,
+				A41A387725504BE7003810AD /* LegoNavigationController.m in Sources */,
 				A4047DC82556D5CA0099CFC6 /* UIButton+Ext.m in Sources */,
 				A4047DC72556D5CA0099CFC6 /* UIView+WaterMark.m in Sources */,
 				A4047DC02556D5CA0099CFC6 /* UIColor+Translate.m in Sources */,

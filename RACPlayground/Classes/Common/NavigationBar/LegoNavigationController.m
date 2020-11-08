@@ -5,13 +5,14 @@
 //  Created by iTBoyer on 2020/11/2.
 //
 
-#import "LegoViewController.h"
+#import "LegoNavigationController.h"
 
-@interface LegoViewController ()
+@interface LegoNavigationController ()
 
 @end
 
-@implementation LegoViewController
+@implementation LegoNavigationController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

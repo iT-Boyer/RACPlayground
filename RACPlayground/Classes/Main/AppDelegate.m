@@ -44,6 +44,7 @@
     // 根据URL显示组件(注意：这里一定要可以用使用self.window，不然当前宏不可用！)
 //    XF_ShowURLComponent2Window_Fast(@"rac://Login")
     //行为参数nav，目前仅支持一个。nav=UI 告知下一个页面需要导航栏
+    //添加自定义导航栏：导航控制器的前缀后边的内容必须是NavigationController
     XF_ShowURLComponent2Window_(@"rac://Login?nav=Lego", {
         //拿到界面对象，
         UIViewController *nextVC =  nextInterface;
