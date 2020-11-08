@@ -68,7 +68,8 @@
     //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    return [manager rac_POST:url parameters:params];
+    RACSignal *result = [manager rac_POST:url parameters:params];
+    return result;
 }
 
 @end
