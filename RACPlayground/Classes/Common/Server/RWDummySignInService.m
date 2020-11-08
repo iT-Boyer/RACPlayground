@@ -41,6 +41,7 @@
                                                                        @"name":pwd
                                                                        }];
     RACSignal *result = [signIn map:^id(NSNumber *value) {
+        NSLog(@"ccc%@",value);
         return [NSNumber numberWithBool:true];
     }];
     return result;
