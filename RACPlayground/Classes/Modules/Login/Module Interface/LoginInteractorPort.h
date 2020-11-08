@@ -10,5 +10,6 @@
 #import "XFInteractorPort.h"
 
 @protocol LoginInteractorPort <XFInteractorPort>
-
+//登录
+-(RACSignal *)signInAction:(NSString *)name pwd:(NSString *)pwd;
 @end

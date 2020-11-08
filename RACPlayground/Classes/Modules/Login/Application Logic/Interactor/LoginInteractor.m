@@ -18,6 +18,12 @@
 @implementation LoginInteractor
 
 #pragma mark - Request
+
+-(RACSignal *)signInAction:(NSString *)name pwd:(NSString *)pwd
+{
+    return [DataManager signInAction:name pwd:pwd];
+}
+
 /*- (RACSignal *)fetchData
 {
     [DataManager setPrefKey:@"PK_User_id" value:@"123"];

@@ -1,4 +1,28 @@
 PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking-RACExtensions (0.1.8):
+    - AFNetworking (~> 2.5.3)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Masonry (1.1.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -10,21 +34,26 @@ PODS:
   - XFLegoVIPER (4.20.0)
 
 DEPENDENCIES:
+  - AFNetworking-RACExtensions
   - Masonry
   - ReactiveCocoa (~> 2.5)
   - XFLegoVIPER (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
+    - AFNetworking-RACExtensions
     - Masonry
     - ReactiveCocoa
     - XFLegoVIPER
 
 SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking-RACExtensions: a043c6b492fa892395ceb9d20bc4c94e96e08a57
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   XFLegoVIPER: bfe5299906f0085431b7fb105432c2a1384c85b5
 
-PODFILE CHECKSUM: 7ca806c43755bce41a2a795bca2a42f92f2b975a
+PODFILE CHECKSUM: 03decbaacaa8173064971698ac09c8791280cb63
 
 COCOAPODS: 1.9.1

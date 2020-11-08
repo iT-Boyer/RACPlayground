@@ -6,6 +6,7 @@ target 'RACPlayground' do
   use_frameworks!
 
   # Pods for RACPlayground
+  pod 'AFNetworking-RACExtensions'
   pod 'ReactiveCocoa', '~> 2.5'
   pod 'Masonry'
   pod 'XFLegoVIPER', '~> 4.0'

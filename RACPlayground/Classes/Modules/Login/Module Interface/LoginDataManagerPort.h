@@ -10,6 +10,5 @@
 #import "XFDataManagerPort.h"
 
 @protocol LoginDataManagerPort <XFDataManagerPort>
-
-
+-(RACSignal *)signInAction:(NSString *)name pwd:(NSString *)pwd;
 @end

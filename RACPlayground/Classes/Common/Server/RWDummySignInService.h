@@ -14,4 +14,9 @@ typedef void (^RWSignInResponse)(BOOL);
 
 - (void)signInWithUsername:(NSString *)username password:(NSString *)password complete:(RWSignInResponse)completeBlock;
 
+
+-(RACSignal *)signInWithUserName:(NSString *)name password:(NSString *)pwd;
+
++ (RACSignal *)postWithURL:(NSString *)url params:(NSDictionary *)params;
++ (RACSignal *)postWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params;
 @end

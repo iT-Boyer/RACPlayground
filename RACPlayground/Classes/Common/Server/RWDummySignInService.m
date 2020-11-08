@@ -7,6 +7,8 @@
 //
 
 #import "RWDummySignInService.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking-RACExtensions/RACAFNetworking.h>
 
 @implementation RWDummySignInService
 
@@ -21,5 +23,52 @@
     });
 }
 
+//- (RACSignal *)pullRecommendCategory {
+//    return [[BDJHttpRequest getWithURL:API_Main
+//                                params:@{
+//                                         @"a":@"category",
+//                                         @"c":@"subscribe"
+//                                         }]
+//            map:^id(RACTuple *tuple) {
+//                return [BDJRecommendCategoryModel mj_objectArrayWithKeyValuesArray:tuple.first[@"list"]];
+//            }];
+//}
+
+-(RACSignal *)signInWithUserName:(NSString *)name password:(NSString *)pwd
+{
+    RACSignal *signIn = [RWDummySignInService postWithURL:@"" params:@{
+                                                                       @"user":name,
+                                                                       @"name":pwd
+                                                                       }];
+    RACSignal *result = [signIn map:^id(BOOL value) {
+        return @(false);
+    }];
+    return result;
+}
+
+
++ (RACSignal *)postWithURL:(NSString *)url params:(NSDictionary *)params
+{
+    return [self postWithHeaders:nil url:url params:params];
+}
+
++ (RACSignal *)postWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    if (headers) {
+        NSArray *keys = headers.allKeys;
+        NSUInteger count = keys.count;
+        for (int i = 0; i < count; i++) {
+            NSString *key = keys[i];
+            NSString *value = [headers valueForKey:key];
+            [[manager requestSerializer] setValue:value forHTTPHeaderField:key];
+        }
+    }
+    
+    //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    return [manager rac_POST:url parameters:params];
+}
 
 @end
