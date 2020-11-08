@@ -105,18 +105,31 @@
 }
 
 - (void)bindViewData {
-    // 双向数据绑定
-    XF_$_Input(self.userNameField, text, EventHandler, userName)
+    // 双向数据绑定 XF_$_Input只对输入框内容text数据进行同步。无法对背景色同步，XF_$_可以对任意数据同步。
     /*等价于RAC方式
      RAC(EventHandler, userName) = [self.userNameField.rac_textSignal distinctUntilChanged];
      [RACObserve(EventHandler, userName) subscribe:RACChannelTo(self.userNameField, text)];
      */
-//    RAC(EventHandler, userName)
+    XF_$_Input(self.userNameField, text, EventHandler, userName)
+    XF_$_(self.userNameField, backgroundColor, EventHandler, userNameBackgroundColor)
+    //
+//    [[self.userNameField.rac_textSignal filter:^BOOL(NSString *text) {
+//        return text.length > 3;
+//    }] subscribeNext:^(id x) {
+//        self.userNameField.backgroundColor = [UIColor orangeColor];
+//    }];
+    //背景色属性信号：校验内容长度，并改变输入框背景色。
+    // 关于输入框内容改变的事件，无法通过XF_C_宏的方式监听，只能通过RAC原生代码实现
+    RACSignal *backColor = [self.userNameField.rac_textSignal map:^id(NSString *value) {
+        return value.length>3?[UIColor orangeColor]:[UIColor clearColor];
+    }];
+    RAC(self.userNameField,backgroundColor) = backColor;
+    
     // 绑定事件层按钮命令:代替Action/target模式
     // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)
     XF_C_(self.mvcBtn, EventHandler, mvcCommand)
-    
+
     [[EventHandler loginCommand].executionSignals subscribeNext:^(RACSignal *signal) {
         //信号不管是异步还是同步，会立即返回一个可取消的对象
         [signal subscribeNext:^(id x) {

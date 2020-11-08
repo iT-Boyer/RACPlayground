@@ -45,6 +45,14 @@
     XF_CEXE_(self.mvcCommand, {
         [Routing transition2JHVC];
     })
+    XF_CEXE_(self.userValidCommand, {
+        if (self.userName.length > 3) {
+            self.userNameBackgroundColor = [UIColor redColor];
+        }
+    })
+    XF_CEXE_(self.pwdValidCommand, {
+        
+    })
     // 当命令触发时执行代码
     XF_CEXE_(self.loginCommand, {
         // TODO

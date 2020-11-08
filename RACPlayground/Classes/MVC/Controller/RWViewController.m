@@ -185,6 +185,12 @@
 }
 
 #pragma mark - UIAction
+-(IBAction)viperVC:(id)sender
+{
+    //通过路由进入home
+//   XF_Present_URLComponent_Fast(@"rac://home")
+}
+
 -(IBAction)backAction:(id)sender
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
