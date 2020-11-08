@@ -78,12 +78,12 @@
     RAC(self.passwordTextField,backgroundColor) = pwdValidColor;
     
     //聚合信号，更改登录按钮状态
-//    RACSignal *signUpdateActiveSignal = [RACSignal combineLatest:@[userValid,pwdValid] reduce:^id(NSNumber *userValid,NSNumber *pwdValid){
-//        return @(userValid.boolValue && pwdValid.boolValue);
-//    }];
-//    [signUpdateActiveSignal subscribeNext:^(NSNumber *active) {
-//        self.signInButton.enabled = active.boolValue;
-//    }];
+    RACSignal *signUpdateActiveSignal = [RACSignal combineLatest:@[userValid,pwdValid] reduce:^id(NSNumber *userValid,NSNumber *pwdValid){
+        return @(userValid.boolValue && pwdValid.boolValue);
+    }];
+    [signUpdateActiveSignal subscribeNext:^(NSNumber *active) {
+        self.signInButton.enabled = active.boolValue;
+    }];
 //
     //响应式登录:创建信号 [self signSignal];
     [[[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside]

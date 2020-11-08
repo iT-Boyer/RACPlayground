@@ -34,7 +34,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"hahh";
 //    self.navigationController.navigationBar.hidden = true;
 }
 #pragma mark - 初始化
@@ -120,11 +119,31 @@
 //    }];
     //背景色属性信号：校验内容长度，并改变输入框背景色。
     // 关于输入框内容改变的事件，无法通过XF_C_宏的方式监听，只能通过RAC原生代码实现
-    RACSignal *backColor = [self.userNameField.rac_textSignal map:^id(NSString *value) {
-        return value.length>3?[UIColor orangeColor]:[UIColor clearColor];
+    RACSignal *usernameValid = [self.userNameField.rac_textSignal map:^id(id value) {
+        NSString *text = value;
+        return @(text.length > 3);
+    }];
+    RACSignal *backColor = [usernameValid map:^id(NSNumber *value) {
+        return value.boolValue?[UIColor orangeColor]:[UIColor clearColor];
     }];
     RAC(self.userNameField,backgroundColor) = backColor;
     
+    RACSignal *passwordValid = [self.passwordField.rac_textSignal map:^id(id value) {
+        NSString *text = value;
+        return @(text.length > 3);
+    }];
+    RACSignal *pwdColor = [passwordValid map:^id(id value) {
+        NSNumber *valid = value;
+        return valid.boolValue?[UIColor orangeColor]:[UIColor clearColor];
+    }];
+    RAC(self.passwordField,backgroundColor)=pwdColor;
+    //聚合信号，更改登录按钮状态
+    RACSignal *signUpdateActiveSignal = [RACSignal combineLatest:@[usernameValid,passwordValid] reduce:^id(NSNumber *userValid,NSNumber*pwdValid){
+        return @(userValid.boolValue && pwdValid.boolValue);
+    }];
+    [signUpdateActiveSignal subscribeNext:^(NSNumber *active) {
+        self.loginBtn.enabled = active.boolValue;
+    }];
     // 绑定事件层按钮命令:代替Action/target模式
     // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)
