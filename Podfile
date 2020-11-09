@@ -10,6 +10,10 @@ target 'RACPlayground' do
   pod 'ReactiveCocoa', '~> 2.5'
   pod 'Masonry'
   pod 'XFLegoVIPER', '~> 4.0'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'MJRefresh'
+  pod 'SDWebImage', '~> 5.8.0'
+  pod 'OHHTTPStubs'   # Default subspecs, including support for NSURLSession & JSON etc
   target 'RACPlaygroundTests' do
     inherit! :search_paths
     # Pods for testing
