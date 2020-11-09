@@ -6,9 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <OHHTTPStubs/HTTPStubs.h>
+#import <OHHTTPStubs/HTTPStubsPathHelpers.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+// 模拟网络
+static id<HTTPStubsDescriptor>textStub = nil;
 //abs隔离层，封装AFNetWork第三方库
 @interface RACHttpRequest : NSObject
 //post方法
