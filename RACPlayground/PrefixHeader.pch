@@ -14,7 +14,7 @@
 #endif /* PrefixHeader_pch */
 
 #import <Masonry/Masonry.h>
-
+#import <MBProgressHUD/MBProgressHUD.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <XFLegoVIPER/XFLegoVIPER.h>
 #import <XFLegoVIPER/XFURLRoute.h>

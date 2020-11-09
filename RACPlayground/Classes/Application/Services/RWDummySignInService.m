@@ -8,6 +8,9 @@
 
 #import "RWDummySignInService.h"
 #import "RACHttpRequest.h"
+
+#define Login @"https://jinher.com/Login"
+
 @implementation RWDummySignInService
 
 
@@ -34,12 +37,12 @@
 
 -(RACSignal *)signInWithUserName:(NSString *)name password:(NSString *)pwd
 {
-    RACSignal *signIn = [RACHttpRequest postWithURL:@"" params:@{
+    RACSignal *signIn = [RACHttpRequest postWithURL:Login params:@{
                                                                        @"user":name,
                                                                        @"name":pwd
                                                                        }];
     RACSignal *result = [signIn map:^id(NSNumber *value) {
-        NSLog(@"ccc%@",value);
+        NSLog(@"Login接口放回数据：%@",value);
         return [NSNumber numberWithBool:true];
     }];
     return result;

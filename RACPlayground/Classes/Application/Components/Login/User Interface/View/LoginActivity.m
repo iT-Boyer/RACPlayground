@@ -158,7 +158,9 @@
 
     [[EventHandler loginCommand].executionSignals subscribeNext:^(RACSignal *signal) {
         //信号不管是异步还是同步，会立即返回一个可取消的对象
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [signal subscribeNext:^(id x) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSLog(@"%@",x);
         }];
         //取消信号
