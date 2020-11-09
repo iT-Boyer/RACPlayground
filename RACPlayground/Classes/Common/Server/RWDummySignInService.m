@@ -8,7 +8,7 @@
 
 #import "RWDummySignInService.h"
 #import <AFNetworking/AFNetworking.h>
-#import <AFNetworking-RACExtensions-umbrella.h>
+#import <AFNetworking3_RACExtensions/AFHTTPSessionManager+RACSupport.h>
 
 @implementation RWDummySignInService
 
@@ -55,7 +55,7 @@
 
 + (RACSignal *)postWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params {
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     if (headers) {
         NSArray *keys = headers.allKeys;
         NSUInteger count = keys.count;
