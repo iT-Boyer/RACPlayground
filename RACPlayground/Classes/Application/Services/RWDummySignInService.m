@@ -7,9 +7,7 @@
 //
 
 #import "RWDummySignInService.h"
-#import <AFNetworking/AFNetworking.h>
-#import <AFNetworking3_RACExtensions/AFHTTPSessionManager+RACSupport.h>
-
+#import "RACHttpRequest.h"
 @implementation RWDummySignInService
 
 
@@ -36,7 +34,7 @@
 
 -(RACSignal *)signInWithUserName:(NSString *)name password:(NSString *)pwd
 {
-    RACSignal *signIn = [RWDummySignInService postWithURL:@"" params:@{
+    RACSignal *signIn = [RACHttpRequest postWithURL:@"" params:@{
                                                                        @"user":name,
                                                                        @"name":pwd
                                                                        }];
@@ -44,32 +42,6 @@
         NSLog(@"ccc%@",value);
         return [NSNumber numberWithBool:true];
     }];
-    return result;
-}
-
-
-+ (RACSignal *)postWithURL:(NSString *)url params:(NSDictionary *)params
-{
-    return [self postWithHeaders:nil url:url params:params];
-}
-
-+ (RACSignal *)postWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params {
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    if (headers) {
-        NSArray *keys = headers.allKeys;
-        NSUInteger count = keys.count;
-        for (int i = 0; i < count; i++) {
-            NSString *key = keys[i];
-            NSString *value = [headers valueForKey:key];
-            [[manager requestSerializer] setValue:value forHTTPHeaderField:key];
-        }
-    }
-    
-    //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    RACSignal *result = [manager rac_POST:url parameters:params];
     return result;
 }
 
