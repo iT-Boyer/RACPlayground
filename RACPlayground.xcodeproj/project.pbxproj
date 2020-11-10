@@ -43,6 +43,8 @@
 		F937EBFA2558EB930066160B /* LoginRouting.m in Sources */ = {isa = PBXBuildFile; fileRef = F937EBD22558EB930066160B /* LoginRouting.m */; };
 		F937EBFB2558EB930066160B /* LoginActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F937EBD42558EB930066160B /* LoginActivity.m */; };
 		F937EC252558F0D30066160B /* RACHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F937EC242558F0D30066160B /* RACHttpRequest.m */; };
+		F9D291B1255AAAB30023E5A7 /* RACRegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D291AA255AAAB30023E5A7 /* RACRegisterViewModel.m */; };
+		F9D291B2255AAAB30023E5A7 /* RACRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D291AF255AAAB30023E5A7 /* RACRegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +174,12 @@
 		F937EC232558F0D30066160B /* RACHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACHttpRequest.h; sourceTree = "<group>"; };
 		F937EC242558F0D30066160B /* RACHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACHttpRequest.m; sourceTree = "<group>"; };
 		F978774A254FBBB800B75702 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F9D291A9255AAAB30023E5A7 /* RACRegisterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterViewModel.h; sourceTree = "<group>"; };
+		F9D291AA255AAAB30023E5A7 /* RACRegisterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACRegisterViewModel.m; sourceTree = "<group>"; };
+		F9D291AC255AAAB30023E5A7 /* RACRegisterViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterViewProtocol.h; sourceTree = "<group>"; };
+		F9D291AD255AAAB30023E5A7 /* RACRegisterDataDriverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterDataDriverProtocol.h; sourceTree = "<group>"; };
+		F9D291AF255AAAB30023E5A7 /* RACRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACRegisterViewController.m; sourceTree = "<group>"; };
+		F9D291B0255AAAB30023E5A7 /* RACRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				F937EB9A2558EB930066160B /* README.md */,
+				F9D291A7255AAAB30023E5A7 /* Register */,
 				F937EB632558EB920066160B /* MVC */,
 				F937EBA62558EB930066160B /* Home */,
 				F937EBBE2558EB930066160B /* Login */,
@@ -669,6 +678,43 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F9D291A7255AAAB30023E5A7 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F9D291A8255AAAB30023E5A7 /* ViewModel */,
+				F9D291AB255AAAB30023E5A7 /* Interface */,
+				F9D291AE255AAAB30023E5A7 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F9D291A8255AAAB30023E5A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9D291A9255AAAB30023E5A7 /* RACRegisterViewModel.h */,
+				F9D291AA255AAAB30023E5A7 /* RACRegisterViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F9D291AB255AAAB30023E5A7 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F9D291AC255AAAB30023E5A7 /* RACRegisterViewProtocol.h */,
+				F9D291AD255AAAB30023E5A7 /* RACRegisterDataDriverProtocol.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		F9D291AE255AAAB30023E5A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9D291B0255AAAB30023E5A7 /* RACRegisterViewController.h */,
+				F9D291AF255AAAB30023E5A7 /* RACRegisterViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -734,6 +780,7 @@
 		F931B2E9254D536300C215A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RAC;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					F931B2F0254D536300C215A5 = {
@@ -849,6 +896,7 @@
 				F937EBDC2558EB930066160B /* UIColor+Translate.m in Sources */,
 				F937EBE12558EB930066160B /* UIView+parentVC.m in Sources */,
 				F937EBFA2558EB930066160B /* LoginRouting.m in Sources */,
+				F9D291B1255AAAB30023E5A7 /* RACRegisterViewModel.m in Sources */,
 				F937EBE52558EB930066160B /* RWDummySignInService.m in Sources */,
 				F937EBF92558EB930066160B /* LoginPresenter.m in Sources */,
 				F937EBF32558EB930066160B /* HomeInteractor.m in Sources */,
@@ -864,6 +912,7 @@
 				F937EC252558F0D30066160B /* RACHttpRequest.m in Sources */,
 				F937EBE62558EB930066160B /* LegoNavigationController.m in Sources */,
 				F937EBDF2558EB930066160B /* UIImage+Util.m in Sources */,
+				F9D291B2255AAAB30023E5A7 /* RACRegisterViewController.m in Sources */,
 				F937EBF02558EB930066160B /* main.m in Sources */,
 				F937EBE32558EB930066160B /* UIView+WaterMark.m in Sources */,
 				F937EBFB2558EB930066160B /* LoginActivity.m in Sources */,
