@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UITextField *userNameField;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UIButton *loginBtn;
+@property (strong, nonatomic) UIButton *registerBtn;
 @property (strong, nonatomic) UIButton *mvcBtn;
 @end
 
@@ -60,6 +61,7 @@
     
     UITextField *usernameField = [UITextField new];
     UITextField *passwordField = [UITextField new];
+    self.registerBtn = [UIButton new];
     UIButton *loginBtn = [UIButton new];
     self.loginBtn = loginBtn;
     self.userNameField = usernameField;
@@ -78,11 +80,18 @@
     [loginBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [loginBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 //    [loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchDown];
-    
+    [self.registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+    self.registerBtn.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.registerBtn.layer.borderWidth = 1;
+    self.registerBtn.layer.cornerRadius = 6;
+    self.registerBtn.layer.masksToBounds = true;
+    [self.registerBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.registerBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     //layout
     [self.view addSubview:usernameField];
     [self.view addSubview:passwordField];
     [self.view addSubview:loginBtn];
+    [self.view addSubview:self.registerBtn];
     
     [usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(20);
@@ -103,6 +112,12 @@
         make.trailing.equalTo(passwordField.mas_trailing);
         make.width.equalTo(@80);
     }];
+    [self.registerBtn mas_makeConstraints:^(MASConstraintMaker *make){
+        make.width.equalTo(@80);
+        make.left.equalTo(passwordField.mas_left);
+        make.centerY.equalTo(loginBtn.mas_centerY);
+    }];
+
 }
 
 -(void)racBind
@@ -154,6 +169,7 @@
     // 绑定事件层按钮命令:代替Action/target模式
     // 使用XF_C_宏封装RAC命令的方式：self.loginBtn.rac_command = [EventHandler loginCommand];
     XF_C_(self.loginBtn, EventHandler, loginCommand)
+    XF_C_(self.registerBtn, EventHandler, registerCommand)
     XF_C_(self.mvcBtn, EventHandler, mvcCommand)
 
     [[EventHandler loginCommand].executionSignals subscribeNext:^(RACSignal *signal) {

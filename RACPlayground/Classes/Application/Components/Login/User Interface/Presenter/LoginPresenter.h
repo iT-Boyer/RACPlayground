@@ -16,5 +16,7 @@
 @property (strong, nonatomic) NSString *password;
 
 @property (nonatomic, strong) RACCommand *loginCommand;
+@property (strong, nonatomic) RACCommand *registerCommand;
+
 @property (nonatomic, strong) RACCommand *mvcCommand;
 @end

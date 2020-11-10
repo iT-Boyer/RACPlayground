@@ -25,6 +25,19 @@ XF_AutoAssemblyModule_Fast
     [[UIViewController topMostController] presentViewController:nav animated:NO completion:nil];
 }
 
+///跳转到MVVM框架：注册账号
+-(void)transition2registerWith:(NSString *)name
+{
+    NSString *url = XF_URL_(@"rac://Register", (@{@"nav":@"UI",
+                                                  @"navTitle":@"注册",
+                                                  @"userName":name
+                                                }));
+    [self.uiBus openURLForPresent:url customCode:nil];
+    return;
+    XF_PUSH_URLComponent_Fast(url)
+    
+}
+
 // 跳转组件
 - (void)transition2homeWith:(NSString *)userId
 {

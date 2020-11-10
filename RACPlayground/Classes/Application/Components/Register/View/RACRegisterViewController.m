@@ -31,7 +31,7 @@
 
 #pragma mark - 初始化
 - (void)config {
-    
+    self.view.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)setUpViews {

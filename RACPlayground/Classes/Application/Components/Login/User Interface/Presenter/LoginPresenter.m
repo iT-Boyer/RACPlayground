@@ -47,7 +47,10 @@
     XF_CEXE_(self.mvcCommand, {
         [Routing transition2JHVC];
     })
-    
+    XF_CEXE_(self.registerCommand, {
+        id<LoginWireFramePort> routing = self.routing;
+        [routing transition2registerWith:self.userName];
+    })
     self.signInService = [RWDummySignInService new];
     // 当命令触发时执行代码
     XF_CEXE_(self.loginCommand, {

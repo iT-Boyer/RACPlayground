@@ -22,7 +22,8 @@
 - (void)viewDidLoad
 {
     // 解构URL参数
-    //    NSInteger userID = self.URLParams[@"id"];
+    NSString *userName =  self.URLParams[@"userName"];
+    NSLog(@"从登录页面得到的数据：%@",userName);
 }
 
 // 初始化视图数据
