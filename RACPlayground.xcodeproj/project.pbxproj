@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2DB9C66680B3AF6CD25DD96E /* Pods_RACPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE62FBD2015793094458632A /* Pods_RACPlayground.framework */; };
-		53A297B9CA68B76B341ECB4A /* Pods_RACPlaygroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2EBB2E6B8EDAA0969E38E1 /* Pods_RACPlaygroundTests.framework */; };
-		8844F430730FCE84AED6B3C6 /* Pods_RACPlayground_RACPlaygroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDFA05AC0877E8E19FC7912 /* Pods_RACPlayground_RACPlaygroundUITests.framework */; };
 		F9237BF425590F140059AAF8 /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = F9237BF325590F140059AAF8 /* Login.json */; };
 		F931B2FF254D536300C215A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B2FD254D536300C215A5 /* Main.storyboard */; };
 		F931B301254D536600C215A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F931B300254D536600C215A5 /* Assets.xcassets */; };
@@ -80,15 +78,9 @@
 
 /* Begin PBXFileReference section */
 		1489E75787D5D8C9029B0004 /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		354F0A6A76096047F3D31FB7 /* Pods-RACPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.release.xcconfig"; path = "Target Support Files/Pods-RACPlayground/Pods-RACPlayground.release.xcconfig"; sourceTree = "<group>"; };
-		668F3D0D8FBA976A80EA1ACE /* Pods-RACPlayground-RACPlaygroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground-RACPlaygroundUITests.release.xcconfig"; path = "Target Support Files/Pods-RACPlayground-RACPlaygroundUITests/Pods-RACPlayground-RACPlaygroundUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6988A08CB8E3BD7D5E12A392 /* Pods-RACPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.debug.xcconfig"; path = "Target Support Files/Pods-RACPlayground/Pods-RACPlayground.debug.xcconfig"; sourceTree = "<group>"; };
-		6FD04CF001FAF7B58167423E /* Pods-RACPlaygroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlaygroundTests.release.xcconfig"; path = "Target Support Files/Pods-RACPlaygroundTests/Pods-RACPlaygroundTests.release.xcconfig"; sourceTree = "<group>"; };
-		940A1728272DCB948A651378 /* Pods-RACPlaygroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlaygroundTests.debug.xcconfig"; path = "Target Support Files/Pods-RACPlaygroundTests/Pods-RACPlaygroundTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DD2EBB2E6B8EDAA0969E38E1 /* Pods_RACPlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		354F0A6A76096047F3D31FB7 /* Pods-RACPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-RACPlayground/Pods-RACPlayground.release.xcconfig"; sourceTree = "<group>"; };
+		6988A08CB8E3BD7D5E12A392 /* Pods-RACPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-RACPlayground/Pods-RACPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		DE62FBD2015793094458632A /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDFA05AC0877E8E19FC7912 /* Pods_RACPlayground_RACPlaygroundUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground_RACPlaygroundUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F079A72473961EC46F33B061 /* Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-RACPlayground-RACPlaygroundUITests/Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9237BF325590F140059AAF8 /* Login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
 		F931B2F1254D536300C215A5 /* RACPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F931B2FE254D536300C215A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,7 +187,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A297B9CA68B76B341ECB4A /* Pods_RACPlaygroundTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +194,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8844F430730FCE84AED6B3C6 /* Pods_RACPlayground_RACPlaygroundUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +205,6 @@
 			children = (
 				6988A08CB8E3BD7D5E12A392 /* Pods-RACPlayground.debug.xcconfig */,
 				354F0A6A76096047F3D31FB7 /* Pods-RACPlayground.release.xcconfig */,
-				F079A72473961EC46F33B061 /* Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig */,
-				668F3D0D8FBA976A80EA1ACE /* Pods-RACPlayground-RACPlaygroundUITests.release.xcconfig */,
-				940A1728272DCB948A651378 /* Pods-RACPlaygroundTests.debug.xcconfig */,
-				6FD04CF001FAF7B58167423E /* Pods-RACPlaygroundTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -227,8 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				DE62FBD2015793094458632A /* Pods_RACPlayground.framework */,
-				EEDFA05AC0877E8E19FC7912 /* Pods_RACPlayground_RACPlaygroundUITests.framework */,
-				DD2EBB2E6B8EDAA0969E38E1 /* Pods_RACPlaygroundTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -582,8 +566,8 @@
 		F937EBBB2558EB930066160B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F937EBBC2558EB930066160B /* HomeActivity.m */,
 				F937EBBD2558EB930066160B /* HomeActivity.h */,
+				F937EBBC2558EB930066160B /* HomeActivity.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -650,8 +634,8 @@
 		F937EBCD2558EB930066160B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F937EBCE2558EB930066160B /* LoginPresenter.m */,
 				F937EBCF2558EB930066160B /* LoginPresenter.h */,
+				F937EBCE2558EB930066160B /* LoginPresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -668,8 +652,8 @@
 		F937EBD32558EB930066160B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F937EBD42558EB930066160B /* LoginActivity.m */,
 				F937EBD52558EB930066160B /* LoginActivity.h */,
+				F937EBD42558EB930066160B /* LoginActivity.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -712,7 +696,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F931B323254D536600C215A5 /* Build configuration list for PBXNativeTarget "RACPlaygroundTests" */;
 			buildPhases = (
-				C4F50F03B383EC1AA824E98F /* [CP] Check Pods Manifest.lock */,
 				F931B308254D536600C215A5 /* Sources */,
 				F931B309254D536600C215A5 /* Frameworks */,
 				F931B30A254D536600C215A5 /* Resources */,
@@ -731,11 +714,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F931B326254D536600C215A5 /* Build configuration list for PBXNativeTarget "RACPlaygroundUITests" */;
 			buildPhases = (
-				CB53670A98B31B89F430F14C /* [CP] Check Pods Manifest.lock */,
 				F931B313254D536600C215A5 /* Sources */,
 				F931B314254D536600C215A5 /* Frameworks */,
 				F931B315254D536600C215A5 /* Resources */,
-				FCA39BBBB3173113C5EAABDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -855,67 +836,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RACPlayground/Pods-RACPlayground-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4F50F03B383EC1AA824E98F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RACPlaygroundTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB53670A98B31B89F430F14C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RACPlayground-RACPlaygroundUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FCA39BBBB3173113C5EAABDB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RACPlayground-RACPlaygroundUITests/Pods-RACPlayground-RACPlaygroundUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RACPlayground-RACPlaygroundUITests/Pods-RACPlayground-RACPlaygroundUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RACPlayground-RACPlaygroundUITests/Pods-RACPlayground-RACPlaygroundUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1162,7 +1082,6 @@
 		};
 		F931B324254D536600C215A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 940A1728272DCB948A651378 /* Pods-RACPlaygroundTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1182,7 +1101,6 @@
 		};
 		F931B325254D536600C215A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FD04CF001FAF7B58167423E /* Pods-RACPlaygroundTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1202,7 +1120,6 @@
 		};
 		F931B327254D536600C215A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F079A72473961EC46F33B061 /* Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RACPlaygroundUITests/Info.plist;
@@ -1220,7 +1137,6 @@
 		};
 		F931B328254D536600C215A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 668F3D0D8FBA976A80EA1ACE /* Pods-RACPlayground-RACPlaygroundUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RACPlaygroundUITests/Info.plist;

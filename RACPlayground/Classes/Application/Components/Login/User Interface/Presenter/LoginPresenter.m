@@ -57,8 +57,13 @@
         //意图数据，可以传递任何对象
         self.intentData = self.userName;
         // 返回信号 ：从展示层返回给视图层，视图层监听信号返回的数据。
-        return [Interactor signInAction:self.userName pwd:self.password];
-        
+        RACSignal *result = [Interactor signInAction:self.userName pwd:self.password];
+        [result subscribeNext:^(NSNumber *result) {
+            if (result.boolValue) {
+                [Routing transition2homeWith:@""];
+            }
+        }];
+        return result;
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             //异步访问网络，请求服务器数据
             [self.signInService signInWithUsername:self.userName password:self.password complete:^(BOOL success) {

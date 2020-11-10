@@ -10,5 +10,5 @@
 #import "XFEventHandlerPort.h"
 
 @protocol HomeEventHandlerPort <XFEventHandlerPort>
-
+@property (strong, nonatomic) RACCommand *backCommand;
 @end

@@ -11,6 +11,5 @@
 
 
 @interface HomePresenter : XFPresenter <HomeEventHandlerPort>
-
-
+@property (strong, nonatomic) RACCommand *backCommand;
 @end
