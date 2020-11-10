@@ -13,7 +13,7 @@
 
 @protocol RACRegisterDataDriverProtocol <LEDataDriverProtocol>
 
-
+@property (strong, nonatomic) NSString *userName;
 @end
 
 #endif /* RACRegisterDataDriverProtocol_h */

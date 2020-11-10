@@ -12,7 +12,7 @@
 #define DataDriver  LEGORealPort(id<RACRegisterDataDriverProtocol>, self.dataDriver)
 
 @interface RACRegisterViewController ()
-
+@property (strong, nonatomic) UILabel *userNameLabel;
 @end
 
 @implementation RACRegisterViewController
@@ -31,16 +31,22 @@
 
 #pragma mark - 初始化
 - (void)config {
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)setUpViews {
-    
+    UILabel *userName = [UILabel new];
+    userName.text = @"注册人名称";
+    self.userNameLabel = userName;
+    [self.view addSubview:userName];
+    [userName mas_makeConstraints:^(MASConstraintMaker *make){
+        make.center.equalTo(@0);
+    }];
 }
 
 - (void)bindViewData {
     // 双向数据绑定
-    //XF_$_(self.textField, text, DataDriver, text)
+//    XF_$_(self.userNameLabel, text, DataDriver, userName)
     // 绑定事件层按钮命令
     //XF_C_(self.btn, DataDriver, Command)
     

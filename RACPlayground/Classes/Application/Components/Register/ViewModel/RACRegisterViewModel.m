@@ -23,6 +23,7 @@
 {
     // 解构URL参数
     NSString *userName =  self.URLParams[@"userName"];
+    self.userName = [NSString stringWithFormat:@"注册人名称%@",userName];
     NSLog(@"从登录页面得到的数据：%@",userName);
 }
 

@@ -38,7 +38,7 @@
     // 注册APP的所有URL
     [XFURLRoute initURLGroup:@[
                                  @"rac://Login", // 测试跳转
-                                 @"rac://Register", //
+                                 @"rac://RACRegister", //
                                  @"rac://Home"
                                  ]];
     
