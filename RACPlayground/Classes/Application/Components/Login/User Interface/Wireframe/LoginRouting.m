@@ -29,12 +29,12 @@ XF_AutoAssemblyModule_Fast
 -(void)transition2registerWith:(NSString *)name
 {
     //nav
-    XF_Present_URLComponent_(@"rac://RACRegister?nav=UI", {
-        NSLog(@"导航条：%@",nextInterface.navigationController);
-        nextInterface.title = @"注册d d";
-        nextInterface.modalPresentationStyle = UIModalPresentationFullScreen;
-    })
-    return;
+//    XF_Present_URLComponent_(@"rac://RACRegister?nav=UI", {
+//        NSLog(@"导航条：%@",nextInterface.navigationController);
+//        nextInterface.title = @"注册d d";
+//        nextInterface.modalPresentationStyle = UIModalPresentationFullScreen;
+//    })
+//    return;
     NSString *url = XF_URL_(@"rac://RACRegister", (@{@"nav":@"UI",
                                                   @"navTitle":@"注册",
                                                   @"userName":name

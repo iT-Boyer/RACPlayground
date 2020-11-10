@@ -194,10 +194,12 @@
 }
 
 #pragma mark - UIAction
-//-(void)loginAction
-//{
+-(void)loginAction
+{
 //    [EventHandler loginAction];
-//}
+    //使用命令模式手动执行: XF_C_(self.registerBtn, EventHandler, registerCommand)
+    [[EventHandler loginCommand] execute:nil];
+}
 
 #pragma mark - Change UI State
 

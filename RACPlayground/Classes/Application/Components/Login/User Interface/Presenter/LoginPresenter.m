@@ -55,6 +55,8 @@
     // 当命令触发时执行代码
     XF_CEXE_(self.loginCommand, {
         // TODO
+        //传入的数据元素名：input 手动执行：[[EventHandler loginCommand] execute:nil];
+        NSLog(@"%@",input);
         //隐藏键盘
 //        [self dismissKeyboard];
         //意图数据，可以传递任何对象

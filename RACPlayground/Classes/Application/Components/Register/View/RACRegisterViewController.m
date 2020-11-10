@@ -46,7 +46,8 @@
 
 - (void)bindViewData {
     // 双向数据绑定
-//    XF_$_(self.userNameLabel, text, DataDriver, userName)
+    
+    XF_$_(self.userNameLabel, text, DataDriver, userName)
     // 绑定事件层按钮命令
     //XF_C_(self.btn, DataDriver, Command)
     

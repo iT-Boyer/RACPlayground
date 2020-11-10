@@ -1,16 +1,20 @@
 #+TITLE: Todo
 
-通过RACPlaygroud学习RAC和VIPER之间的开发模式。
+通过 RACPlaygroud 学习 RAC 和 VIPER 之间的开发模式。
 
 ** 功能点
 *** 登录用例
 输入账号密码--数据校验--登录成功失败
-传值： url传值
+传值： url 传值
 *** 成功页面
 传值方式
 
  ///添加两种跳转方式
-    //1. viper直接跳转原生mvc框架：不导出模块的情况下
+    //1. viper 直接跳转原生 mvc 框架：不导出模块的情况下
 
 
-    //2. 原生直接跳转到viper： 以展示层为入口进行跳转
+    //2. 原生直接跳转到 viper： 以展示层为入口进行跳转
+*** 问题
+1. mvvm 框架 vmodel 层不支持 viewdidload 方法
+2. present 之后的控制器不显示导航条。
+3. 模态出的组件如何退出。
