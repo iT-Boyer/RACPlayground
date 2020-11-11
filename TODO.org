@@ -15,6 +15,7 @@
 
     //2. 原生直接跳转到 viper： 以展示层为入口进行跳转
 *** 问题
-1. mvvm 框架 vmodel 层不支持 viewdidload 方法
-2. present 之后的控制器不显示导航条。
-3. 模态出的组件如何退出。
+1. 问题：mvvm 框架 vmodel 层不支持 viewdidload 方法,present 之后的控制器不显示导航条。
+   需要开启 MVVM 的支持：
+   [[[XFLegoConfig defaultConfig] enableLog] addComponentHanderPlug:[LEMVVMModuleHandler class]]
+2. 模态出的组件如何退出。

@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import <XFLegoVIPER/LEMVVMModuleHandler.h>
 
 @interface AppDelegate ()
 
@@ -33,7 +34,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 配置乐高框架 // 使有默认配置
-    [[XFLegoConfig defaultConfig] enableLog]; // 允许打印log
+    [[[XFLegoConfig defaultConfig]
+                    enableLog]                                           // 允许打印log
+                    addComponentHanderPlug:[LEMVVMModuleHandler class]]; // 添加扩展MVVM模块组件处理器（用来处理MVVM模块组件）
     
     // 注册APP的所有URL
     [XFURLRoute initURLGroup:@[

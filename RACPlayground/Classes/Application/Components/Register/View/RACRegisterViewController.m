@@ -64,7 +64,10 @@
 
 
 #pragma mark - Change UI State
-
+-(UIModalPresentationStyle)modalPresentationStyle
+{
+    return UIModalPresentationFullScreen;
+}
 
 #pragma mark - UIControlDelegate
 
