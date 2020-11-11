@@ -13,6 +13,7 @@
 
 @protocol RACRegisterDataDriverProtocol <LEDataDriverProtocol>
 
+@property (strong, nonatomic) RACCommand *backCommand;
 @property (strong, nonatomic) NSString *userName;
 @end
 

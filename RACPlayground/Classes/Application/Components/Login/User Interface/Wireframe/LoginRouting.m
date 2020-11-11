@@ -28,13 +28,17 @@ XF_AutoAssemblyModule_Fast
 ///跳转到MVVM框架：注册账号
 -(void)transition2registerWith:(NSString *)name
 {
+//    XF_Present_URLComponent_(@"rac://RACRegister?nav=Lego", {
+//                nextInterface.modalPresentationStyle = UIModalPresentationOverFullScreen;
+//            })
+//    return;
     NSString *url = XF_URL_(@"rac://RACRegister", (@{@"nav":@"UI",
                                                 @"navTitle":@"注册",
                                                 @"userName":name
                                                 }));
     [self.uiBus openURLForPresent:url customCode:^(__kindof UIViewController * _Nonnull nextInterface) {
         nextInterface.title = @"注册+";
-        nextInterface.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        nextInterface.navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     }];
     return;
     //方式二

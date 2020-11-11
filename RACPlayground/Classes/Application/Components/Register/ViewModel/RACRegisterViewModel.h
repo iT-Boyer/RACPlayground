@@ -10,5 +10,6 @@
 #import "RACRegisterDataDriverProtocol.h"
 
 @interface RACRegisterViewModel : LEViewModel <RACRegisterDataDriverProtocol>
+@property (strong, nonatomic) RACCommand *backCommand;
 @property (strong, nonatomic) NSString *userName;
 @end

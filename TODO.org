@@ -19,3 +19,4 @@
    需要开启 MVVM 的支持：
    [[[XFLegoConfig defaultConfig] enableLog] addComponentHanderPlug:[LEMVVMModuleHandler class]]
 2. 模态出的组件如何退出。
+  [[https://github.com/yizzuide/XFLegoVIPER/issues/10][ present一个组件后，退出时执行{self dismissViewAction}奔溃]]

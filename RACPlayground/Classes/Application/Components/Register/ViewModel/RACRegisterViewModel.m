@@ -36,11 +36,12 @@
 // 初始化命令
 - (void)initCommand
 {
-    /*XF_CEXE_Begin
+    XF_CEXE_Begin
      // 当命令触发时执行代码
-     XF_CEXE_(self.command, {
+     XF_CEXE_(self.backCommand, {
      // TODO
-     })*/
+         [self dismissViewAction];
+     })
 }
 
 // 接收到组件返回数据

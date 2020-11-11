@@ -13,6 +13,7 @@
 
 @interface RACRegisterViewController ()
 @property (strong, nonatomic) UILabel *userNameLabel;
+@property (strong, nonatomic) UIButton *backBtn;
 @end
 
 @implementation RACRegisterViewController
@@ -32,6 +33,11 @@
 #pragma mark - 初始化
 - (void)config {
     self.view.backgroundColor = [UIColor whiteColor];
+    UIButton *back = [UIButton new];
+    self.backBtn = back;
+    [back setTitle:@"返回" forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchDown];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:back];
 }
 
 - (void)setUpViews {
@@ -49,7 +55,7 @@
     
     XF_$_(self.userNameLabel, text, DataDriver, userName)
     // 绑定事件层按钮命令
-    //XF_C_(self.btn, DataDriver, Command)
+    XF_C_(self.backBtn, DataDriver, backCommand)
     
     // load or reset expressPack
     /*XF_Define_Weak
@@ -68,7 +74,13 @@
 {
     return UIModalPresentationFullScreen;
 }
-
+-(void)backAction:(UIButton *)btn
+{
+    //方式1
+//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    //方式2
+//    [DataDriver.backCommand execute:@1];
+}
 #pragma mark - UIControlDelegate
 
 
