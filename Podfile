@@ -9,7 +9,7 @@ target 'RACPlayground' do
   pod "AFNetworking3-RACExtensions", :git => 'https://github.com/MakeItEasy/AFNetworking3-RACExtensions.git', :tag => '0.1.0'
   pod 'ReactiveCocoa', '~> 2.5'
   pod 'Masonry'
-  pod 'XFLegoVIPER', '~> 4.0'
+  pod 'XFLegoVIPER', :git => "https://github.com/yizzuide/XFLegoVIPER.git"
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'MJRefresh'
   pod 'SDWebImage', '~> 5.8.0'
