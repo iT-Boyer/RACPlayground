@@ -13,6 +13,7 @@
 
 @interface HomeActivity ()
 @property (strong, nonatomic) UIButton *xf_backBtn;
+@property (strong, nonatomic) UIButton *setBtn;
 @end
 
 @implementation HomeActivity
@@ -31,7 +32,10 @@
 
 #pragma mark - 初始化
 - (void)config {
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIButton *set = [[UIButton alloc]init];
+    [set setTitle:@"设置" forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:set];
 }
 
 - (void)setUpViews {
@@ -51,6 +55,8 @@
     [self.xf_backBtn mas_makeConstraints:^(MASConstraintMaker *make){
         make.center.equalTo(@0);
     }];
+    
+    
 
 }
 
@@ -72,7 +78,7 @@
     //XF_$_(self.textField, text, EventHandler, text)
     // 绑定事件层按钮命令
     XF_C_(self.xf_backBtn, EventHandler, backCommand)
-    
+    XF_C_(self.setBtn, EventHandler, setCommand)
     // load or reset expressPack
     /*XF_Define_Weak
      [RACObserve(self.eventHandler, expressPack) subscribeNext:^(id x) {

@@ -52,6 +52,11 @@
 //        [self.routing popComponent];
 //        [self.routing dismissComponent];
     })
+    XF_CEXE_(self.setCommand, {
+//        Routing
+        //进入设置页面
+        NSLog(@"进入设置页面");
+    })
 }
 
 // 接收到组件返回数据

@@ -11,4 +11,5 @@
 
 @protocol HomeEventHandlerPort <XFEventHandlerPort>
 @property (strong, nonatomic) RACCommand *backCommand;
+@property (strong, nonatomic) RACCommand *setCommand;
 @end
