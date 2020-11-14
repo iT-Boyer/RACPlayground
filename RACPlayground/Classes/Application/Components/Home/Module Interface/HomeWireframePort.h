@@ -10,5 +10,5 @@
 #import "XFWireFramePort.h"
 
 @protocol HomeWireFramePort <XFWireFramePort>
-
+- (void)transition2Setting;
 @end

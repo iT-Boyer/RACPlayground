@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2DB9C66680B3AF6CD25DD96E /* Pods_RACPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE62FBD2015793094458632A /* Pods_RACPlayground.framework */; };
 		936D90B57DE8EBCA8F957FC1 /* Pods_RACPlaygroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF15025E40487E56001935FA /* Pods_RACPlaygroundTests.framework */; };
+		A48844BF25602BE5002FACC8 /* RACSetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844B825602BE5002FACC8 /* RACSetViewModel.m */; };
+		A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844BD25602BE5002FACC8 /* RACSetViewController.m */; };
 		E0C294B0E5953EFD20A17B42 /* Pods_RACPlayground_RACPlaygroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E83490F227C5B3B65F70BA /* Pods_RACPlayground_RACPlaygroundUITests.framework */; };
 		F9237BF425590F140059AAF8 /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = F9237BF325590F140059AAF8 /* Login.json */; };
 		F931B2FF254D536300C215A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B2FD254D536300C215A5 /* Main.storyboard */; };
@@ -87,6 +89,12 @@
 		6682DF7AE3B3847B5C091BD2 /* Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-RACPlayground-RACPlaygroundUITests/Pods-RACPlayground-RACPlaygroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6988A08CB8E3BD7D5E12A392 /* Pods-RACPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlayground.debug.xcconfig"; path = "Target Support Files/Pods-RACPlayground/Pods-RACPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		6A3C5ACCE82FA0CD54FD4F7E /* Pods-RACPlaygroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlaygroundTests.release.xcconfig"; path = "Target Support Files/Pods-RACPlaygroundTests/Pods-RACPlaygroundTests.release.xcconfig"; sourceTree = "<group>"; };
+		A48844B725602BE5002FACC8 /* RACSetViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSetViewModel.h; sourceTree = "<group>"; };
+		A48844B825602BE5002FACC8 /* RACSetViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSetViewModel.m; sourceTree = "<group>"; };
+		A48844BA25602BE5002FACC8 /* RACSetDataDriverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSetDataDriverProtocol.h; sourceTree = "<group>"; };
+		A48844BB25602BE5002FACC8 /* RACSetViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSetViewProtocol.h; sourceTree = "<group>"; };
+		A48844BD25602BE5002FACC8 /* RACSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSetViewController.m; sourceTree = "<group>"; };
+		A48844BE25602BE5002FACC8 /* RACSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSetViewController.h; sourceTree = "<group>"; };
 		D9BD9063F0B8251773F1B23A /* Pods-RACPlaygroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlaygroundTests.debug.xcconfig"; path = "Target Support Files/Pods-RACPlaygroundTests/Pods-RACPlaygroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE62FBD2015793094458632A /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF15025E40487E56001935FA /* Pods_RACPlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +237,43 @@
 				6A3C5ACCE82FA0CD54FD4F7E /* Pods-RACPlaygroundTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A48844B525602BE5002FACC8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A48844B625602BE5002FACC8 /* ViewModel */,
+				A48844B925602BE5002FACC8 /* Interface */,
+				A48844BC25602BE5002FACC8 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A48844B625602BE5002FACC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A48844B725602BE5002FACC8 /* RACSetViewModel.h */,
+				A48844B825602BE5002FACC8 /* RACSetViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A48844B925602BE5002FACC8 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A48844BA25602BE5002FACC8 /* RACSetDataDriverProtocol.h */,
+				A48844BB25602BE5002FACC8 /* RACSetViewProtocol.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		A48844BC25602BE5002FACC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A48844BE25602BE5002FACC8 /* RACSetViewController.h */,
+				A48844BD25602BE5002FACC8 /* RACSetViewController.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CDEC294AC978BF9DADD5E0F9 /* Frameworks */ = {
@@ -484,6 +529,7 @@
 		F937EB992558EB930066160B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A48844B525602BE5002FACC8 /* Setting */,
 				F937EB9A2558EB930066160B /* README.md */,
 				F9D291A7255AAAB30023E5A7 /* Register */,
 				F937EB632558EB920066160B /* MVC */,
@@ -984,6 +1030,7 @@
 				F937EBD62558EB930066160B /* RACViewController.m in Sources */,
 				F937EBF42558EB930066160B /* HomePresenter.m in Sources */,
 				F937EBD72558EB930066160B /* RWViewController.m in Sources */,
+				A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */,
 				F937EBF62558EB930066160B /* HomeActivity.m in Sources */,
 				F937EBE02558EB930066160B /* UINavigationBar+FixedPosition.m in Sources */,
 				F937EBF52558EB930066160B /* HomeRouting.m in Sources */,
@@ -994,6 +1041,7 @@
 				F937EBDF2558EB930066160B /* UIImage+Util.m in Sources */,
 				F9D291B2255AAAB30023E5A7 /* RACRegisterViewController.m in Sources */,
 				F937EBF02558EB930066160B /* main.m in Sources */,
+				A48844BF25602BE5002FACC8 /* RACSetViewModel.m in Sources */,
 				F937EBE32558EB930066160B /* UIView+WaterMark.m in Sources */,
 				F937EBFB2558EB930066160B /* LoginActivity.m in Sources */,
 				F937EBDD2558EB930066160B /* UIView+Ext.m in Sources */,

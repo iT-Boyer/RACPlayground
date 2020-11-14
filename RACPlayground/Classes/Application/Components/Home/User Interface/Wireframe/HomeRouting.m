@@ -19,4 +19,9 @@ XF_AutoAssemblyModule_Fast
 {
     XF_PUSH_URLComponent_Fast(@"xxx://index/user?id=151&name=yizzuide")
 }*/
+
+-(void)transition2Setting
+{
+    XF_PUSH_Component_Fast(@"rac://Home/Set")
+}
 @end

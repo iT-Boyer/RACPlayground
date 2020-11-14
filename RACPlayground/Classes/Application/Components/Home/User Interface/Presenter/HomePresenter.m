@@ -53,9 +53,9 @@
 //        [self.routing dismissComponent];
     })
     XF_CEXE_(self.setCommand, {
-//        Routing
         //进入设置页面
         NSLog(@"进入设置页面");
+        [Routing transition2Setting];
     })
 }
 
