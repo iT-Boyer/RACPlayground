@@ -13,7 +13,6 @@
 #define EventHandler  XFConvertPresenterToType(id<HomeEventHandlerPort>)
 
 @interface HomeActivity ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic) UIButton *xf_backBtn;
 @property (strong, nonatomic) UIButton *setBtn;
 @property (strong, nonatomic) UITableView *tableView;
 @end
@@ -50,18 +49,10 @@
     self.navigationItem.leftBarButtonItem = backItem;
     [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchDown];
     
-    //返回按钮
-    self.xf_backBtn = [UIButton new];
-    [self.xf_backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.xf_backBtn setTitle:@"XF返回方式" forState:UIControlStateNormal];
-    [self.view addSubview:self.xf_backBtn];
-    [self.xf_backBtn mas_makeConstraints:^(MASConstraintMaker *make){
-        make.center.equalTo(@0);
-    }];
-    
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make){
         make.center.equalTo(@0);
+        make.left.bottom.equalTo(@0);
     }];
 
 }
@@ -83,7 +74,6 @@
     // 双向数据绑定
     //XF_$_(self.textField, text, EventHandler, text)
     // 绑定事件层按钮命令
-    XF_C_(self.xf_backBtn, EventHandler, backCommand)
     XF_C_(self.setBtn, EventHandler, setCommand)
     // load or reset expressPack
     /*XF_Define_Weak

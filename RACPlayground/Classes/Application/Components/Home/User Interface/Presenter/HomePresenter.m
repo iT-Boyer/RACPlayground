@@ -43,15 +43,15 @@
 {
     XF_CEXE_Begin
     // 当命令触发时执行代码
-    XF_CEXE_(self.backCommand, {
+//    XF_CEXE_(self.backCommand, {
         // TODO
         //返回方式一
-        [self popViewAction];
+//        [self popViewAction];
 //        [self dismissViewAction];
         //返回方式二
 //        [self.routing popComponent];
 //        [self.routing dismissComponent];
-    })
+//    })
     XF_CEXE_(self.setCommand, {
         //进入设置页面
         NSLog(@"进入设置页面");
