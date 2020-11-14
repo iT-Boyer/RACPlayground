@@ -34,8 +34,9 @@
 - (void)config {
     self.view.backgroundColor = [UIColor whiteColor];
     UIButton *set = [[UIButton alloc]init];
+    self.setBtn = set;
     [set setTitle:@"设置" forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:set];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:set];
 }
 
 - (void)setUpViews {
