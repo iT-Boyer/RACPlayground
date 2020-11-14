@@ -22,6 +22,6 @@ XF_AutoAssemblyModule_Fast
 
 -(void)transition2Setting
 {
-    XF_PUSH_Component_Fast(@"rac://Home/Set")
+    XF_PUSH_Component_Fast(@"rac://Home/RACSet")
 }
 @end

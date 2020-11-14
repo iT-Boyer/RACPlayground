@@ -31,11 +31,18 @@
 
 #pragma mark - 初始化
 - (void)config {
-    
+    self.title = @"设置";
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)setUpViews {
-    
+    UILabel *msg = [UILabel new];
+    msg.text = @"设置页面显示";
+    [self.view addSubview:msg];
+    [msg mas_makeConstraints:^(MASConstraintMaker *make){
+        make.center.equalTo(@0);
+    }];
+
 }
 
 - (void)bindViewData {

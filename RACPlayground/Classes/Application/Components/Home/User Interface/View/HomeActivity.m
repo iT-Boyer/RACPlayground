@@ -8,12 +8,14 @@
 
 #import "HomeActivity.h"
 #import "HomeEventHandlerPort.h"
+#import <MJRefresh/MJRefresh.h>
 
 #define EventHandler  XFConvertPresenterToType(id<HomeEventHandlerPort>)
 
-@interface HomeActivity ()
+@interface HomeActivity ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UIButton *xf_backBtn;
 @property (strong, nonatomic) UIButton *setBtn;
+@property (strong, nonatomic) UITableView *tableView;
 @end
 
 @implementation HomeActivity
@@ -57,7 +59,10 @@
         make.center.equalTo(@0);
     }];
     
-    
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.center.equalTo(@0);
+    }];
 
 }
 
@@ -96,10 +101,53 @@
 
 
 #pragma mark - UIControlDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"TODOCellId";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UITableView Delegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 #pragma mark - Getter
-
+-(UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        _tableView.separatorColor = [UIColor redColor];//Color_EEEEEE;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.estimatedRowHeight = 140.f;
+        _tableView.rowHeight = UITableViewAutomaticDimension;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TODOCellId"];
+    }
+    return _tableView;
+}
 
 
 @end
