@@ -11,6 +11,7 @@ PODS:
   - AFNetworking3-RACExtensions/NSURLSession (0.1.0):
     - AFNetworking/NSURLSession (~> 3.0)
     - ReactiveCocoa (~> 2.0)
+  - JSONModel (1.8.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.5.0)
@@ -41,6 +42,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking3-RACExtensions (from `https://github.com/MakeItEasy/AFNetworking3-RACExtensions.git`, tag `0.1.0`)
+  - JSONModel
   - Masonry
   - MBProgressHUD (~> 1.1.0)
   - MJRefresh
@@ -52,6 +54,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - JSONModel
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -73,6 +76,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AFNetworking3-RACExtensions: 7e6bd04ef69a3783f6379c1dfa1ed28069caebe3
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
@@ -81,6 +85,6 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   XFLegoVIPER: 6e23fea7d20c5a058d6bc931f952cf3bc1547fe0
 
-PODFILE CHECKSUM: da4ac7d816fe898ed44a96008c6be481b6009cb7
+PODFILE CHECKSUM: 8f285fba24373ff21e9b63596560db5054ae85d3
 
 COCOAPODS: 1.9.1

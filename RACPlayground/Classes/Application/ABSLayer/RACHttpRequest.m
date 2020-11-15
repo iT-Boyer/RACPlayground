@@ -35,6 +35,34 @@
     return result;
 }
 
+#pragma mark - get方法
++ (RACSignal *)getWithURL:(NSString *)url params:(NSDictionary *)params
+{
+    return [self getWithHeaders:nil url:url params:params];
+}
+
++ (RACSignal *)getWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    if (headers) {
+        NSArray *keys = headers.allKeys;
+        NSUInteger count = keys.count;
+        for (int i = 0; i < count; i++) {
+            NSString *key = keys[i];
+            NSString *value = [headers valueForKey:key];
+            [[manager requestSerializer] setValue:value forHTTPHeaderField:key];
+        }
+    }
+    
+    //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    return [manager rac_GET:url parameters:params];
+    
+}
+
+
+
+#pragma mark - OHHttpStub模拟网络接口服务
 +(void)installTextStub:(NSString *)host
 {
     //    __weak JHURLRequest *weakself = self;

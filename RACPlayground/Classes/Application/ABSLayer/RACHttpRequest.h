@@ -21,7 +21,8 @@ static id<HTTPStubsDescriptor>textStub = nil;
 +(RACSignal *)postWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params;
 
 //get方法
-
++ (RACSignal *)getWithURL:(NSString *)url params:(NSDictionary *)params;
++ (RACSignal *)getWithHeaders:(NSDictionary *)headers url:(NSString *)url params:(NSDictionary *)params;
 
 @end
 
