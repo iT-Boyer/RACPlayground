@@ -15,9 +15,12 @@
 @end
 
 @implementation HomeDataManager
--(void)fetchRandom:(NSInteger)random
+
+-(RACSignal *)fetchRandom:(NSInteger)random;
 {
-    [self.service fetchRandomDogs:random];
+    return [[self.service fetchRandomDogs:random] map:^id(id value) {
+        
+    }];
 }
 
 #pragma mark - getter

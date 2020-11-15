@@ -11,5 +11,5 @@
 
 @protocol HomeDataManagerPort <XFDataManagerPort>
 ///随机获取图片
--(void)fetchRandom:(NSInteger)random;
+-(RACSignal *)fetchRandom:(NSInteger)random;
 @end

@@ -13,6 +13,8 @@
 		A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844BD25602BE5002FACC8 /* RACSetViewController.m */; };
 		A48844C32561786C002FACC8 /* PublicApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844C22561786C002FACC8 /* PublicApiService.m */; };
 		A48844C725617B5D002FACC8 /* RACDogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844C625617B5D002FACC8 /* RACDogModel.m */; };
+		A48844CB2561803F002FACC8 /* RACDogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844CA2561803F002FACC8 /* RACDogItem.m */; };
+		A48844CF256180C5002FACC8 /* RACDogProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844CE256180C5002FACC8 /* RACDogProvider.m */; };
 		E0C294B0E5953EFD20A17B42 /* Pods_RACPlayground_RACPlaygroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E83490F227C5B3B65F70BA /* Pods_RACPlayground_RACPlaygroundUITests.framework */; };
 		F9237BF425590F140059AAF8 /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = F9237BF325590F140059AAF8 /* Login.json */; };
 		F931B2FF254D536300C215A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B2FD254D536300C215A5 /* Main.storyboard */; };
@@ -101,6 +103,10 @@
 		A48844C22561786C002FACC8 /* PublicApiService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicApiService.m; sourceTree = "<group>"; };
 		A48844C525617B5D002FACC8 /* RACDogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACDogModel.h; sourceTree = "<group>"; };
 		A48844C625617B5D002FACC8 /* RACDogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDogModel.m; sourceTree = "<group>"; };
+		A48844C92561803F002FACC8 /* RACDogItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACDogItem.h; sourceTree = "<group>"; };
+		A48844CA2561803F002FACC8 /* RACDogItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDogItem.m; sourceTree = "<group>"; };
+		A48844CD256180C5002FACC8 /* RACDogProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACDogProvider.h; sourceTree = "<group>"; };
+		A48844CE256180C5002FACC8 /* RACDogProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDogProvider.m; sourceTree = "<group>"; };
 		D9BD9063F0B8251773F1B23A /* Pods-RACPlaygroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlaygroundTests.debug.xcconfig"; path = "Target Support Files/Pods-RACPlaygroundTests/Pods-RACPlaygroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE62FBD2015793094458632A /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF15025E40487E56001935FA /* Pods_RACPlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,10 +291,21 @@
 		A48844C425617B30002FACC8 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				A48844CD256180C5002FACC8 /* RACDogProvider.h */,
+				A48844CE256180C5002FACC8 /* RACDogProvider.m */,
 				A48844C525617B5D002FACC8 /* RACDogModel.h */,
 				A48844C625617B5D002FACC8 /* RACDogModel.m */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		A48844C825618025002FACC8 /* Express */ = {
+			isa = PBXGroup;
+			children = (
+				A48844C92561803F002FACC8 /* RACDogItem.h */,
+				A48844CA2561803F002FACC8 /* RACDogItem.m */,
+			);
+			path = Express;
 			sourceTree = "<group>";
 		};
 		CDEC294AC978BF9DADD5E0F9 /* Frameworks */ = {
@@ -627,6 +644,7 @@
 		F937EBB42558EB930066160B /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				A48844C825618025002FACC8 /* Express */,
 				F937EBB52558EB930066160B /* Presenter */,
 				F937EBBB2558EB930066160B /* View */,
 				F937EBB82558EB930066160B /* Wireframe */,
@@ -1038,6 +1056,7 @@
 			files = (
 				F937EBF82558EB930066160B /* LoginInteractor.m in Sources */,
 				F937EBDC2558EB930066160B /* UIColor+Translate.m in Sources */,
+				A48844CF256180C5002FACC8 /* RACDogProvider.m in Sources */,
 				F937EBE12558EB930066160B /* UIView+parentVC.m in Sources */,
 				F937EBFA2558EB930066160B /* LoginRouting.m in Sources */,
 				F9D291B1255AAAB30023E5A7 /* RACRegisterViewModel.m in Sources */,
@@ -1053,6 +1072,7 @@
 				A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */,
 				F937EBF62558EB930066160B /* HomeActivity.m in Sources */,
 				F937EBE02558EB930066160B /* UINavigationBar+FixedPosition.m in Sources */,
+				A48844CB2561803F002FACC8 /* RACDogItem.m in Sources */,
 				F937EBF52558EB930066160B /* HomeRouting.m in Sources */,
 				F937EBE42558EB930066160B /* UIButton+Ext.m in Sources */,
 				F937EBE22558EB930066160B /* UIViewController+topmost.m in Sources */,

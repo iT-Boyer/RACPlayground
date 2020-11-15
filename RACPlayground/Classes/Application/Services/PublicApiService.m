@@ -8,7 +8,7 @@
 #import "PublicApiService.h"
 #import "RACDogModel.h"
 
-#define dogs "https://dog.ceo/api/breed/hound/afghan/images/random/3"
+#define dogs @"https://dog.ceo/api/breed/hound/afghan/images/random/3"
 
 @implementation PublicApiService
 
