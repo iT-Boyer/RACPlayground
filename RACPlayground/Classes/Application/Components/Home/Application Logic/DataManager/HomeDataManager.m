@@ -18,9 +18,7 @@
 
 -(RACSignal *)fetchRandom:(NSInteger)random;
 {
-    return [[self.service fetchRandomDogs:random] map:^id(id value) {
-        
-    }];
+    return [self.service fetchRandomDogs:random];
 }
 
 #pragma mark - getter

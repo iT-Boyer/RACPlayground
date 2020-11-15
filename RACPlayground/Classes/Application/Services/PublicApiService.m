@@ -17,7 +17,9 @@
     //
     [[RACHttpRequest getWithURL:dogs params:@{}] map:^id(RACTuple *tuple) {
         NSData *data = tuple.first;
-        NSArray<RACDogModel *> *models = [RACDogModel arrayOfModelsFromData:data error:nil];//[[RACDogModel alloc] initWithData:data error:nil];
+        NSDictionary *dic = [NSJSONSerialization dataWithJSONObject:data options:kNilOptions error:nil];
+        NSArray *msgs = [dic objectForKey:@"message"];
+        NSArray<RACDogModel *> *models = [RACDogModel arrayOfModelsFromData:msgs error:nil];//[[RACDogModel alloc] initWithData:data error:nil];
         return models;
     }];
     return nil;

@@ -10,5 +10,5 @@
 #import "XFInteractorPort.h"
 
 @protocol HomeInteractorPort <XFInteractorPort>
-
+-(RACSignal *)fetchDogs:(NSInteger)random;
 @end
