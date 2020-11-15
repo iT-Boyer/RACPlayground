@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XFRenderItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RACDogItem : NSObject
+@interface RACDogItem : XFRenderItem
 @property (strong, nonatomic) NSString *url;
 @end
 

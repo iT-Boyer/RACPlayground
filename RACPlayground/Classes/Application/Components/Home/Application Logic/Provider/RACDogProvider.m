@@ -8,14 +8,18 @@
 #import "RACDogProvider.h"
 #import "RACDogItem.h"
 #import "RACDogModel.h"
+#import "XFRenderData.h"
 @implementation RACDogProvider
 
-+(NSArray<RACDogItem *> *)fetchDogRandom:(NSArray *)models
++(XFRenderData *)fetchDogRandom:(NSArray *)models
 {
-    return [[models.rac_sequence map:^id(RACDogModel *model) {
+    XFRenderData *data = [XFRenderData new];
+    data.list = [models.rac_sequence map:^id(RACDogModel *model) {
         RACDogItem *item = [RACDogItem new];
         item.url = model.url;
         return item;
-    }] array];
+    }];
+    
+    return data;
 }
 @end

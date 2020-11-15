@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XFInteractorPort.h"
-
+#import "XFRenderData.h"
 @protocol HomeInteractorPort <XFInteractorPort>
--(RACSignal *)fetchDogs:(NSInteger)random;
+-(XFRenderData *)fetchDogs:(NSInteger)random;
 @end
