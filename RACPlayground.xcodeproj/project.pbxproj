@@ -11,6 +11,8 @@
 		936D90B57DE8EBCA8F957FC1 /* Pods_RACPlaygroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF15025E40487E56001935FA /* Pods_RACPlaygroundTests.framework */; };
 		A48844BF25602BE5002FACC8 /* RACSetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844B825602BE5002FACC8 /* RACSetViewModel.m */; };
 		A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844BD25602BE5002FACC8 /* RACSetViewController.m */; };
+		A48844C32561786C002FACC8 /* PublicApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844C22561786C002FACC8 /* PublicApiService.m */; };
+		A48844C725617B5D002FACC8 /* RACDogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A48844C625617B5D002FACC8 /* RACDogModel.m */; };
 		E0C294B0E5953EFD20A17B42 /* Pods_RACPlayground_RACPlaygroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E83490F227C5B3B65F70BA /* Pods_RACPlayground_RACPlaygroundUITests.framework */; };
 		F9237BF425590F140059AAF8 /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = F9237BF325590F140059AAF8 /* Login.json */; };
 		F931B2FF254D536300C215A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931B2FD254D536300C215A5 /* Main.storyboard */; };
@@ -95,6 +97,10 @@
 		A48844BB25602BE5002FACC8 /* RACSetViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSetViewProtocol.h; sourceTree = "<group>"; };
 		A48844BD25602BE5002FACC8 /* RACSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSetViewController.m; sourceTree = "<group>"; };
 		A48844BE25602BE5002FACC8 /* RACSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSetViewController.h; sourceTree = "<group>"; };
+		A48844C12561786C002FACC8 /* PublicApiService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicApiService.h; sourceTree = "<group>"; };
+		A48844C22561786C002FACC8 /* PublicApiService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicApiService.m; sourceTree = "<group>"; };
+		A48844C525617B5D002FACC8 /* RACDogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACDogModel.h; sourceTree = "<group>"; };
+		A48844C625617B5D002FACC8 /* RACDogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDogModel.m; sourceTree = "<group>"; };
 		D9BD9063F0B8251773F1B23A /* Pods-RACPlaygroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACPlaygroundTests.debug.xcconfig"; path = "Target Support Files/Pods-RACPlaygroundTests/Pods-RACPlaygroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE62FBD2015793094458632A /* Pods_RACPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF15025E40487E56001935FA /* Pods_RACPlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACPlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +280,15 @@
 				A48844BD25602BE5002FACC8 /* RACSetViewController.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A48844C425617B30002FACC8 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				A48844C525617B5D002FACC8 /* RACDogModel.h */,
+				A48844C625617B5D002FACC8 /* RACDogModel.m */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		CDEC294AC978BF9DADD5E0F9 /* Frameworks */ = {
@@ -553,6 +568,8 @@
 				F937EB9E2558EB930066160B /* README.md */,
 				F937EB882558EB930066160B /* RWDummySignInService.h */,
 				F937EB892558EB930066160B /* RWDummySignInService.m */,
+				A48844C12561786C002FACC8 /* PublicApiService.h */,
+				A48844C22561786C002FACC8 /* PublicApiService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -582,6 +599,7 @@
 		F937EBAD2558EB930066160B /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
+				A48844C425617B30002FACC8 /* Provider */,
 				F937EBAE2558EB930066160B /* DataManager */,
 				F937EBB12558EB930066160B /* Interactor */,
 			);
@@ -1027,7 +1045,9 @@
 				F937EBF92558EB930066160B /* LoginPresenter.m in Sources */,
 				F937EBF32558EB930066160B /* HomeInteractor.m in Sources */,
 				F937EBF22558EB930066160B /* HomeDataManager.m in Sources */,
+				A48844C725617B5D002FACC8 /* RACDogModel.m in Sources */,
 				F937EBD62558EB930066160B /* RACViewController.m in Sources */,
+				A48844C32561786C002FACC8 /* PublicApiService.m in Sources */,
 				F937EBF42558EB930066160B /* HomePresenter.m in Sources */,
 				F937EBD72558EB930066160B /* RWViewController.m in Sources */,
 				A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */,
