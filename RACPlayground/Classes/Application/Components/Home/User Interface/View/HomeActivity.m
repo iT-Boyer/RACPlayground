@@ -125,7 +125,7 @@
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row];
+    RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row].renderItem;
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.url]];
     

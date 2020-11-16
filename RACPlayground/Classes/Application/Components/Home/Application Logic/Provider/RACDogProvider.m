@@ -14,11 +14,11 @@
 +(XFRenderData *)fetchDogRandom:(RACDogModel *)model
 {
     XFRenderData *data = [XFRenderData new];
-    data.list = [model.message.rac_sequence map:^id(NSString *url) {
+    data.list = [[model.message.rac_sequence map:^id(NSString *url) {
         RACDogItem *item = [RACDogItem new];
         item.url = url;
         return item;
-    }];
+    }] array];
     return data;
 }
 @end

@@ -18,7 +18,6 @@
 #define Routing XFConvertRoutingToType(id<HomeWireFramePort>)
 
 @interface HomePresenter ()
-
 @end
 
 @implementation HomePresenter
@@ -29,6 +28,10 @@
 {
     // 解构URL参数
 //    NSInteger userID = self.URLParams[@"id"];
+    
+    XFRenderData *data = [XFRenderData new];
+    data.list = [NSMutableArray new];
+    XF_SetExpressPack_(XFExpressPack, data);
 }
 
 // 初始化视图数据
@@ -85,9 +88,7 @@
 #pragma mark - DoAction
 -(RACSignal *)fetchDogs:(NSInteger)random
 {
-    XFRenderData *data = [XFRenderData new];
-    data.list = [NSMutableArray new];
-    XF_SetExpressPack_(XFExpressPack, data);
+    
     return [[Interactor fetchDogs:4] map:^id(XFRenderData *data) {
         return XF_CreateIndexPaths_Last_Fast(data);
     }];

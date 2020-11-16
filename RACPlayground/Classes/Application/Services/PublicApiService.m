@@ -27,8 +27,6 @@
                                                      error:&error];
         }
         
-//        NSArray *msgs = [data objectForKey:@"message"];
-//        NSArray<RACDogModel *> *models = [RACDogModel arrayOfModelsFromData:msgs error:nil];
         RACDogModel *dogmodel = [[RACDogModel alloc] initWithDictionary:data error:nil];
         return dogmodel;
     }];
