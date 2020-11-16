@@ -11,5 +11,5 @@
 
 @protocol HomeEventHandlerPort <XFEventHandlerPort>
 @property (strong, nonatomic) RACCommand *setCommand;
-
+-(RACSignal *)fetchDogs:(NSInteger)random;
 @end

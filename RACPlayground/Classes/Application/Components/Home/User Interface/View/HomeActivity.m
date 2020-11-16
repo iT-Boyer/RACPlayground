@@ -9,7 +9,7 @@
 #import "HomeActivity.h"
 #import "HomeEventHandlerPort.h"
 #import <MJRefresh/MJRefresh.h>
-
+#import "RACDogItem.h"
 #define EventHandler  XFConvertPresenterToType(id<HomeEventHandlerPort>)
 
 @interface HomeActivity ()<UITableViewDelegate,UITableViewDataSource>
@@ -55,6 +55,22 @@
         make.left.bottom.equalTo(@0);
     }];
 
+    XF_Define_Weak
+    MJRefreshAutoNormalFooter * _Nonnull extractedExpr = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        if(_tableView.mj_header.isRefreshing) {
+            [_tableView.mj_header endRefreshing];
+        }
+        XF_Define_Strong
+        [[EventHandler fetchDogs:4] subscribeNext:^(NSArray<NSIndexPath *> *indexPaths) {
+            [_tableView.mj_footer endRefreshing];
+            if (!indexPaths) {
+                return;
+            }
+            // 局部插入行
+            [_tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+        }];
+    }];
+            _tableView.mj_footer = extractedExpr;
 }
 
 -(void)backAction:(UIButton *)sender
@@ -91,12 +107,14 @@
 
 
 #pragma mark - UIControlDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.eventHandler.expressPack.expressPieces.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,8 +125,9 @@
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.url]];
     
     return cell;
 }

@@ -23,7 +23,7 @@
     [DataManager setPrefKey:@"PK_User_id" value:@"123"];
     return [RACSignal return:@""];
 }*/
--(XFRenderData *)fetchDogs:(NSInteger)random
+-(RACSignal *)fetchDogs:(NSInteger)random
 {
     return [[DataManager fetchRandom:4] map:^id(NSArray *models) {
         return [RACDogProvider fetchDogRandom:models];
