@@ -11,16 +11,13 @@
 #import "XFRenderData.h"
 @implementation RACDogProvider
 
-+(XFRenderData *)fetchDogRandom:(NSArray *)models
++(XFRenderData *)fetchDogRandom:(RACDogModel *)model
 {
     XFRenderData *data = [XFRenderData new];
-    data.list = [models.rac_sequence map:^id(RACDogModel *model) {
-        NSArray *urls = [model.message componentsSeparatedByString:@","];
-        return [urls.rac_sequence map:^id(NSString *url) {
-            RACDogItem *item = [RACDogItem new];
-            item.url = url;
-            return item;
-        }];
+    data.list = [model.message.rac_sequence map:^id(NSString *url) {
+        RACDogItem *item = [RACDogItem new];
+        item.url = url;
+        return item;
     }];
     return data;
 }

@@ -8,7 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RACDogModel : JSONModel
-@property (strong, nonatomic) NSString *message;
+@property (strong, nonatomic) NSArray *message;
 @property (strong, nonatomic) NSString *status;
 @end
 

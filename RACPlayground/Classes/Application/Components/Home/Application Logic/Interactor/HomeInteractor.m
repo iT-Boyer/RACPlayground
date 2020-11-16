@@ -9,6 +9,7 @@
 #import "HomeInteractor.h"
 #import "HomeDataManagerPort.h"
 #import "RACDogProvider.h"
+#import "RACDogModel.h"
 #define DataManager XFConvertDataManagerToType(id<HomeDataManagerPort>)
 
 @interface HomeInteractor ()
@@ -25,8 +26,8 @@
 }*/
 -(RACSignal *)fetchDogs:(NSInteger)random
 {
-    return [[DataManager fetchRandom:4] map:^id(NSArray *models) {
-        return [RACDogProvider fetchDogRandom:models];
+    return [[DataManager fetchRandom:4] map:^id(RACDogModel *model) {
+        return [RACDogProvider fetchDogRandom:model];
     }];
 }
 
