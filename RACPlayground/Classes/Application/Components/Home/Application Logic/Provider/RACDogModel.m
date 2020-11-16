@@ -8,5 +8,8 @@
 #import "RACDogModel.h"
 
 @implementation RACDogModel
-
++(BOOL)propertyIsOptional:(NSString *)propertyName
+{
+    return true;
+}
 @end

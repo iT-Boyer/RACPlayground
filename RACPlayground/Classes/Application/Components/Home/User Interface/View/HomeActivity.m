@@ -57,20 +57,20 @@
 
     XF_Define_Weak
     MJRefreshAutoNormalFooter * _Nonnull extractedExpr = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        if(_tableView.mj_header.isRefreshing) {
-            [_tableView.mj_header endRefreshing];
+        if(self.tableView.mj_header.isRefreshing) {
+            [self.tableView.mj_header endRefreshing];
         }
         XF_Define_Strong
         [[EventHandler fetchDogs:4] subscribeNext:^(NSArray<NSIndexPath *> *indexPaths) {
-            [_tableView.mj_footer endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
             if (!indexPaths) {
                 return;
             }
             // 局部插入行
-            [_tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
         }];
     }];
-            _tableView.mj_footer = extractedExpr;
+    self.tableView.mj_footer = extractedExpr;
 }
 
 -(void)backAction:(UIButton *)sender

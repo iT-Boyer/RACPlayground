@@ -8,6 +8,7 @@
 #import "PublicApiService.h"
 #import "RACDogModel.h"
 
+//https://dog.ceo/api/breeds/image/random/3
 #define dogs @"https://dog.ceo/api/breed/hound/afghan/images/random/3"
 
 @implementation PublicApiService
@@ -15,13 +16,21 @@
 -(RACSignal *)fetchRandomDogs:(NSInteger)random
 {
     //
-    [[RACHttpRequest getWithURL:dogs params:@{}] map:^id(RACTuple *tuple) {
-        NSData *data = tuple.first;
-        NSDictionary *dic = [NSJSONSerialization dataWithJSONObject:data options:kNilOptions error:nil];
-        NSArray *msgs = [dic objectForKey:@"message"];
-        NSArray<RACDogModel *> *models = [RACDogModel arrayOfModelsFromData:msgs error:nil];//[[RACDogModel alloc] initWithData:data error:nil];
-        return models;
+    return [[RACHttpRequest getWithURL:dogs params:@{}] map:^id(RACTuple *tuple) {
+        
+        NSDictionary *data = tuple.first;
+        if (![tuple.first isKindOfClass:[NSDictionary class]]
+            && [NSJSONSerialization isValidJSONObject:data]) {
+            NSError *error;
+            data = [NSJSONSerialization JSONObjectWithData:data
+                                                   options:kNilOptions
+                                                     error:&error];
+        }
+        
+//        NSArray *msgs = [data objectForKey:@"message"];
+//        NSArray<RACDogModel *> *models = [RACDogModel arrayOfModelsFromData:msgs error:nil];
+        RACDogModel *dogss = [[RACDogModel alloc] initWithDictionary:data error:nil];
+        return dogss;
     }];
-    return nil;
 }
 @end

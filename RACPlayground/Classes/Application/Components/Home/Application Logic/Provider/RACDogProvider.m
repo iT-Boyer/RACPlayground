@@ -15,11 +15,13 @@
 {
     XFRenderData *data = [XFRenderData new];
     data.list = [models.rac_sequence map:^id(RACDogModel *model) {
-        RACDogItem *item = [RACDogItem new];
-        item.url = model.url;
-        return item;
+        NSArray *urls = [model.message componentsSeparatedByString:@","];
+        return [urls.rac_sequence map:^id(NSString *url) {
+            RACDogItem *item = [RACDogItem new];
+            item.url = url;
+            return item;
+        }];
     }];
-    
     return data;
 }
 @end
