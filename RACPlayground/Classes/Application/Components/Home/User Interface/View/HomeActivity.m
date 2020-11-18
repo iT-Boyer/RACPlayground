@@ -124,6 +124,7 @@
     RACDogCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row].renderItem;
     cell.name = [NSString stringWithFormat:@"%d",indexPath.row];
+    cell.imgUrl = item.url;
 //    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.url]];
     
     return cell;

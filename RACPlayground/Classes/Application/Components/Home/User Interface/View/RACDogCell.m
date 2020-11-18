@@ -43,7 +43,14 @@
 //    RAC(nameLab,)
 //    RAC(nameLab,text) = self.
     XF_$_(nameLab, text, self, name)
-    
+    XF_Define_Weak
+    [RACObserve(self, imgUrl) subscribeNext:^(id x) {
+        XF_Define_Strong
+        // 如果有显示数据加载完成
+        if (x) {
+            [imgView sd_setImageWithURL:[NSURL URLWithString:x]];
+        }
+    }];
 }
 
 
