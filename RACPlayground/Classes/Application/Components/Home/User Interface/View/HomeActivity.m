@@ -123,8 +123,8 @@
     
     RACDogCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row].renderItem;
-    
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.url]];
+    cell.name = [NSString stringWithFormat:@"%d",indexPath.row];
+//    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.url]];
     
     return cell;
 }
