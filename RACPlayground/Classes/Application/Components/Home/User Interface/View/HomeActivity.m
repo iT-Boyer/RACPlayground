@@ -10,6 +10,7 @@
 #import "HomeEventHandlerPort.h"
 #import <MJRefresh/MJRefresh.h>
 #import "RACDogItem.h"
+#import "RACDogCell.h"
 #define EventHandler  XFConvertPresenterToType(id<HomeEventHandlerPort>)
 
 @interface HomeActivity ()<UITableViewDelegate,UITableViewDataSource>
@@ -118,13 +119,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"TODOCellId";
+    static NSString *cellIdentifier = @"RACDogCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    RACDogCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row].renderItem;
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.url]];
@@ -153,7 +150,7 @@
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.estimatedRowHeight = 140.f;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TODOCellId"];
+        [_tableView registerClass:[RACDogCell class] forCellReuseIdentifier:@"RACDogCell"];
     }
     return _tableView;
 }
