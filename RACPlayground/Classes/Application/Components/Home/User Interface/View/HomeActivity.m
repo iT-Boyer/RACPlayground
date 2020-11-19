@@ -133,7 +133,8 @@
 #pragma mark - UITableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    RACDogItem *item = self.eventHandler.expressPack.expressPieces[indexPath.row].renderItem;
+    [EventHandler transition2Detail:item.url];
 }
 
 #pragma mark - Getter

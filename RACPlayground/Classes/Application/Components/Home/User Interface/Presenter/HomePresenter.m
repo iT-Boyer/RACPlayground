@@ -94,6 +94,12 @@
     }];
 }
 
+-(void)transition2Detail:(NSString *)imgUrl
+{
+    self.intentData = imgUrl;
+    [Routing transition2Detail:imgUrl];
+}
+
 
 #pragma mark - ValidData
 

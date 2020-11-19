@@ -11,4 +11,5 @@
 
 @protocol HomeWireFramePort <XFWireFramePort>
 - (void)transition2Setting;
+- (void)transition2Detail:(NSString *)imgUrl;
 @end

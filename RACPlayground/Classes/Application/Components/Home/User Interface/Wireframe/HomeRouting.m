@@ -24,4 +24,15 @@ XF_AutoAssemblyModule_Fast
 {
     XF_PUSH_Component_Fast(@"rac://Home/RACSet")
 }
+
+- (void)transition2Detail:(NSString *)imgUrl
+{
+    XF_PUSH_Component_Fast(@"rac://Home/RACDetail")
+    return;
+    XF_PUSH_Component_Fast(XF_URL_(@"rac://Home/RACDetail", (@{
+                                                                @"imgUrl":imgUrl
+                                                             })
+                                   )
+                           )
+}
 @end

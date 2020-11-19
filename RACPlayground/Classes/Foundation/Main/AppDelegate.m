@@ -43,7 +43,8 @@
                                  @"rac://Login", // 测试跳转
                                  @"rac://RACRegister", //
                                  @"rac://Home",
-                                 @"rac://Home/Set"
+                                 @"rac://Home/Set",
+                                 @"rac://Home/RACDetail"
                                  ]];
     
     // 根据URL显示组件(注意：这里一定要可以用使用self.window，不然当前宏不可用！)

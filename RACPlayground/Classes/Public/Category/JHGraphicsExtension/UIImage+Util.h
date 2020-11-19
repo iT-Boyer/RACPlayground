@@ -69,5 +69,9 @@
  * @return 合成后图片
  */
 + (UIImage *)combine:(UIImage *)leftImage :(UIImage *)rightImage;
+
+
+// 给图片添加文字水印
+-(UIImage *)addWaterByPattern:(NSAttributedString *)text;
     
 @end

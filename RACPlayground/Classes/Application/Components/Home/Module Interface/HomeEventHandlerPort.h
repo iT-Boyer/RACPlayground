@@ -12,4 +12,7 @@
 @protocol HomeEventHandlerPort <XFEventHandlerPort>
 @property (strong, nonatomic) RACCommand *setCommand;
 -(RACSignal *)fetchDogs:(NSInteger)random;
+
+//跳转到详情
+- (void)transition2Detail:(NSString *)imgUrl;
 @end
