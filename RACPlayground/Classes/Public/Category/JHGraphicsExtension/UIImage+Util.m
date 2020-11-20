@@ -10,6 +10,7 @@
 #import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+Ext.h"
+#import "UIImage+Rotate.h"
 
 @implementation UIImage (Util)
 
@@ -291,10 +292,11 @@
 //    NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],NSForegroundColorAttributeName:[UIColor whiteColor]};
 //    UIImage *img = [self waterImageWithSize:CGSizeMake(150, 150) text:text.string attr:attr];
     // 平铺到view上
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width * 2, self.size.height * 2)];
     view.backgroundColor = [[UIColor alloc] initWithPatternImage:img];
     // 获取view截图
     UIImage *image = [self convertViewToImage:view];
+    image = [image imageRotatedByDegrees:-30];
     
     //合并
     return [self addImage:image toImage:self];
@@ -306,9 +308,8 @@
     /**
      这里之所以外面再放一个UIView，是因为直接用label画图的话，旋转就不起作用了
      */
-    CGFloat textW = 260;
-    CGFloat djx = textW + 60;
-    CGFloat textH = sqrt(djx*djx - textW*textW);//开方
+    CGFloat textW = 350;
+    CGFloat textH = 100;//开方
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, textW, textH)];
     view.backgroundColor = [UIColor clearColor];
     
@@ -316,7 +317,7 @@
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.attributedText = text;
-    label.transform = CGAffineTransformMakeRotation(-M_PI/4.0);
+//    label.transform = CGAffineTransformMakeRotation(-M_PI/6.0);
     [view addSubview:label];
     
     CGSize scaleSize = CGSizeMake(textW, textH);
@@ -357,7 +358,7 @@
     [image2 drawInRect:CGRectMake(0, 0, image2.size.width, image2.size.height)];
     
     //Draw image1
-    [image1 drawInRect:CGRectMake(-20, 0, image1.size.width, image1.size.height)];
+    [image1 drawInRect:CGRectMake(-image2.size.width, -image2.size.height, image1.size.width, image1.size.height)];
     
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     

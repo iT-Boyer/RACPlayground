@@ -48,7 +48,7 @@
     self.imgView.contentMode = UIViewContentModeScaleAspectFit;
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         NSString *userAccount = [self protectAccount:@"13522834108"];
-        NSAttributedString *attr = [[NSAttributedString alloc] initWithString:userAccount attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:44.0f],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        NSAttributedString *attr = [[NSAttributedString alloc] initWithString:userAccount attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:54.0f],NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.2]}];
         UIImage *water = [image addWaterByPattern:attr];
         self.imgView.image = water;
     }];
@@ -71,17 +71,17 @@
     //XF_C_(self.btn, DataDriver, Command)
     
     // load or reset expressPack
-    XF_Define_Weak
-    [RACObserve(self.dataDriver, expressData) subscribeNext:^(NSString *imgUrl) {
-        XF_Define_Strong
-        // 如果有显示数据加载完成
-        if (imgUrl) {
-            [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                UIImage *water = [image addWaterByPattern:@"192333****4"];
-                self.imgView.image = water;
-            }];
-        }
-    }];
+//    XF_Define_Weak
+//    [RACObserve(self.dataDriver, expressData) subscribeNext:^(NSString *imgUrl) {
+//        XF_Define_Strong
+//        // 如果有显示数据加载完成
+//        if (imgUrl) {
+//            [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//                UIImage *water = [image addWaterByPattern:@"192333****4"];
+//                self.imgView.image = water;
+//            }];
+//        }
+//    }];
 }
 
 

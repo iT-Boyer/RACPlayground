@@ -52,6 +52,7 @@
 		F937EC252558F0D30066160B /* RACHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F937EC242558F0D30066160B /* RACHttpRequest.m */; };
 		F9B0B6FA2566235A008A9DEB /* RACDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0B6F225662359008A9DEB /* RACDetailViewModel.m */; };
 		F9B0B6FB2566235A008A9DEB /* RACDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0B6F925662359008A9DEB /* RACDetailViewController.m */; };
+		F9B0B90D2567B246008A9DEB /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0B90B2567B246008A9DEB /* UIImage+Rotate.m */; };
 		F9D291B1255AAAB30023E5A7 /* RACRegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D291AA255AAAB30023E5A7 /* RACRegisterViewModel.m */; };
 		F9D291B2255AAAB30023E5A7 /* RACRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D291AF255AAAB30023E5A7 /* RACRegisterViewController.m */; };
 /* End PBXBuildFile section */
@@ -205,6 +206,8 @@
 		F9B0B6F625662359008A9DEB /* RACDetailViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACDetailViewProtocol.h; sourceTree = "<group>"; };
 		F9B0B6F825662359008A9DEB /* RACDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACDetailViewController.h; sourceTree = "<group>"; };
 		F9B0B6F925662359008A9DEB /* RACDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACDetailViewController.m; sourceTree = "<group>"; };
+		F9B0B90B2567B246008A9DEB /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		F9B0B90C2567B246008A9DEB /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		F9D291A9255AAAB30023E5A7 /* RACRegisterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterViewModel.h; sourceTree = "<group>"; };
 		F9D291AA255AAAB30023E5A7 /* RACRegisterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACRegisterViewModel.m; sourceTree = "<group>"; };
 		F9D291AC255AAAB30023E5A7 /* RACRegisterViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterViewProtocol.h; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 				F937EB7B2558EB930066160B /* UIImage+ResizeImage.m */,
 				F937EB772558EB930066160B /* UIImage+Util.h */,
 				F937EB7E2558EB930066160B /* UIImage+Util.m */,
+				F9B0B90C2567B246008A9DEB /* UIImage+Rotate.h */,
+				F9B0B90B2567B246008A9DEB /* UIImage+Rotate.m */,
 				F937EB762558EB930066160B /* UINavigationBar+FixedPosition.h */,
 				F937EB7F2558EB930066160B /* UINavigationBar+FixedPosition.m */,
 				F937EB832558EB930066160B /* UIView+Ext.h */,
@@ -1035,6 +1040,7 @@
 				F937EBE52558EB930066160B /* RWDummySignInService.m in Sources */,
 				F937EBF92558EB930066160B /* LoginPresenter.m in Sources */,
 				F937EBF32558EB930066160B /* HomeInteractor.m in Sources */,
+				F9B0B90D2567B246008A9DEB /* UIImage+Rotate.m in Sources */,
 				F937EBF22558EB930066160B /* HomeDataManager.m in Sources */,
 				A48844C725617B5D002FACC8 /* RACDogModel.m in Sources */,
 				F937EBD62558EB930066160B /* RACViewController.m in Sources */,
