@@ -10,12 +10,29 @@
 #import "RACDetailDataDriverProtocol.h"
 #import "UIImage+Util.h"
 #define DataDriver  LEGORealPort(id<RACDetailDataDriverProtocol>, self.dataDriver)
-
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.height
 @interface RACDetailViewController ()
 @property (strong, nonatomic) UIImageView *imgView;
+
+
+//水印层
+@property (nonatomic,strong) CATextLayer * firstTextLayer;
+@property (nonatomic,strong) CATextLayer * secondTextLayer;
+@property (nonatomic,strong) CATextLayer * thirdTextLayer;
+@property (nonatomic,strong) CATextLayer * fourthTextLayer;
+@property (nonatomic,strong) CATextLayer * fifthTextLayer;
+
+@property (nonatomic,strong) CATextLayer * sixTextLayer;
+@property (nonatomic,strong) CATextLayer * sevenTextLayer;
+@property (nonatomic,strong) CATextLayer * eightTextLayer;
+@property (nonatomic,strong) CATextLayer * nineTextLayer;
+@property (strong, nonatomic) UIView *waterView;
 @end
 
 @implementation RACDetailViewController
+{
+    NSString * waterTxt;
+}
 
 - (void)viewDidLoad
 {
@@ -27,6 +44,8 @@
     [self setUpViews];
     // 绑定视图数据
     [self bindViewData];
+    
+    [self showWatermark];
 }
 
 #pragma mark - 初始化
@@ -39,6 +58,7 @@
     //
     UIImageView *imgview = [UIImageView new];
     self.imgView = imgview;
+    self.waterView = self.imgView;
     [self.view addSubview:imgview];
     [imgview mas_makeConstraints:^(MASConstraintMaker *make){
         make.center.equalTo(@0);
@@ -48,7 +68,7 @@
     self.imgView.contentMode = UIViewContentModeScaleAspectFit;
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         NSString *userAccount = [self protectAccount:@"13522834108"];
-        NSAttributedString *attr = [[NSAttributedString alloc] initWithString:userAccount attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:54.0f],NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.2]}];
+        NSAttributedString *attr = [[NSAttributedString alloc] initWithString:userAccount attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:54.0f weight:UIFontWeightMedium],NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.25]}];
         UIImage *water = [image addWaterByPattern:attr];
         self.imgView.image = water;
     }];
@@ -86,11 +106,111 @@
 
 
 #pragma mark - Change UI State
-
+-(void)showWatermark
+{
+    waterTxt = @"192*****7";
+    [self.view addSubview:self.waterView];
+    [self.waterView.layer addSublayer:self.firstTextLayer];
+    [self.waterView.layer addSublayer:self.secondTextLayer];
+    [self.waterView.layer addSublayer:self.thirdTextLayer];
+    [self.waterView.layer addSublayer:self.fourthTextLayer];
+    [self.waterView.layer addSublayer:self.fifthTextLayer];
+    [self.waterView.layer addSublayer:self.sixTextLayer];
+    [self.waterView.layer addSublayer:self.sevenTextLayer];
+    [self.waterView.layer addSublayer:self.eightTextLayer];
+    [self.waterView.layer addSublayer:self.nineTextLayer];
+}
 
 #pragma mark - UIControlDelegate
 
 
 #pragma mark - Getter
+-(CATextLayer *)firstTextLayer{
+    
+    if (!_firstTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        
+        _firstTextLayer = [self createTextLayerWithFrame:CGRectMake(-orginX*4, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH + orginX*2, 36)];
+    }
+    return _firstTextLayer;
+}
 
+-(CATextLayer *)secondTextLayer{
+    
+    if (!_secondTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _secondTextLayer = [self createTextLayerWithFrame:CGRectMake(-orginX*2, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH+orginX, 36)];
+    }
+    return _secondTextLayer;
+}
+
+-(CATextLayer *)thirdTextLayer{
+    
+    if (!_thirdTextLayer) {
+        _thirdTextLayer = [self createTextLayerWithFrame:CGRectMake(0, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH, 36)];
+    }
+    return _thirdTextLayer;
+}
+
+-(CATextLayer *)fourthTextLayer{
+    
+    if (!_fourthTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _fourthTextLayer = [self createTextLayerWithFrame:CGRectMake(orginX, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH + orginX, 36)];
+    }
+    return _fourthTextLayer;
+}
+
+-(CATextLayer *)fifthTextLayer{
+    
+    if (!_fifthTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _fifthTextLayer = [self createTextLayerWithFrame:CGRectMake(orginX*3, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH, 36)];
+    }
+    return _fifthTextLayer;
+}
+
+- (CATextLayer *)sixTextLayer{
+    if (!_sixTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _sixTextLayer = [self createTextLayerWithFrame:CGRectMake(-orginX*3, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH + orginX*1.5, 36)];
+    }
+    return _sixTextLayer;
+}
+
+-(CATextLayer *)sevenTextLayer{
+    if (!_sevenTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _sevenTextLayer = [self createTextLayerWithFrame:CGRectMake(-orginX, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH+orginX/2, 36)];
+    }
+    return _sevenTextLayer;
+}
+
+-(CATextLayer *)eightTextLayer{
+    if (!_eightTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _eightTextLayer = [self createTextLayerWithFrame:CGRectMake(orginX/2, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH+ orginX/2, 36)];
+    }
+    return _eightTextLayer;
+}
+
+-(CATextLayer *)nineTextLayer{
+    if (!_nineTextLayer) {
+        CGFloat orginX = SCREENWIDTH/5;
+        _nineTextLayer = [self createTextLayerWithFrame:CGRectMake(orginX*2, (self.waterView.frame.size.height - 36) / 2, SCREENWIDTH+ orginX/2, 36)];
+    }
+    return _nineTextLayer;
+}
+
+- (CATextLayer *)createTextLayerWithFrame:(CGRect)layerFrame{
+    CATextLayer * textLayer = [[CATextLayer alloc] init];
+    textLayer.frame = layerFrame;
+    textLayer.string = [[NSAttributedString alloc] initWithString:waterTxt attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20],NSForegroundColorAttributeName:[UIColor redColor]}];
+    textLayer.alignmentMode = @"left";
+    textLayer.opacity = 0.2;
+    textLayer.wrapped = YES;
+    textLayer.anchorPoint = CGPointMake(0.5, 0.5);
+    [textLayer setAffineTransform:CGAffineTransformMakeRotation(-M_PI / 4)];
+    return textLayer;
+}
 @end

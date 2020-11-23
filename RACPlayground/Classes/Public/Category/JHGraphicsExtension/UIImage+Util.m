@@ -308,8 +308,8 @@
     /**
      这里之所以外面再放一个UIView，是因为直接用label画图的话，旋转就不起作用了
      */
-    CGFloat textW = 350;
-    CGFloat textH = 100;//开方
+    CGFloat textW = 480;
+    CGFloat textH = 300;//开方
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, textW, textH)];
     view.backgroundColor = [UIColor clearColor];
     
@@ -341,7 +341,7 @@
     //2.绘制图片
     [[UIImage new] drawInRect:CGRectMake(0, 0, size.width, size.height)];
     //添加水印文字
-    [text drawAtPoint:CGPointMake(size.width/2.0, size.height/2.0) withAttributes:attr];
+    [text drawAtPoint:CGPointMake(size.width/2.0, size.height/2.0 - 40) withAttributes:attr];
     //3.从上下文中获取新图片
     UIImage * newImage = UIGraphicsGetImageFromCurrentImageContext();
     //4.关闭图形上下文
