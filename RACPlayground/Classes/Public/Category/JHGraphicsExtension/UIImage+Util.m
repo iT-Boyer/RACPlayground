@@ -308,8 +308,8 @@
     /**
      这里之所以外面再放一个UIView，是因为直接用label画图的话，旋转就不起作用了
      */
-    CGFloat textW = 480;
-    CGFloat textH = 300;//开方
+    CGFloat textW = 450;
+    CGFloat textH = 250;//开方
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, textW, textH)];
     view.backgroundColor = [UIColor clearColor];
     
