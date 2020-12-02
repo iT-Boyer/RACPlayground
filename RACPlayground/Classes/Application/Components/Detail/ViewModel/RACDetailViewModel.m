@@ -22,8 +22,8 @@
 - (void)viewDidLoad
 {
     // 解构URL参数
-    
-    self.expressData = self.componentData;
+    NSDictionary *dic = self.intentData;
+    self.expressData = [dic objectForKey:@"imgUrl"];
 }
 
 // 初始化视图数据

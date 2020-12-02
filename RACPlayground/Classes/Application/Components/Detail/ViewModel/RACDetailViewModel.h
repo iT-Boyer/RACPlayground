@@ -10,5 +10,5 @@
 #import "RACDetailDataDriverProtocol.h"
 
 @interface RACDetailViewModel : LEViewModel <RACDetailDataDriverProtocol>
-@property (strong, nonatomic) NSString *expressData;
+//@property (strong, nonatomic) NSString *expressData;
 @end

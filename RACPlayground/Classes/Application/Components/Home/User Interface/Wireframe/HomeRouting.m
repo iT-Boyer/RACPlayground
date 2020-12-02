@@ -8,6 +8,7 @@
 
 
 #import "HomeRouting.h"
+#import "RACDetailViewController.h"
 
 @implementation HomeRouting
 
@@ -27,6 +28,13 @@ XF_AutoAssemblyModule_Fast
 
 - (void)transition2Detail:(NSString *)imgUrl
 {
+    //
+    RACDetailViewController *detail = [RACDetailViewController new];
+    [LEMVVMConnector makeComponentFromUInterface:detail forName:@"detail" intentData:@{@"imgUrl":imgUrl}];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detail];
+    [self.realUInterface presentViewController:nav animated:YES completion:nil];
+    return;
+    //出现bug：https://github.com/yizzuide/XFLegoVIPER/issues/12
     XF_PUSH_Component_Fast(@"rac://Home/RACDetail")
     return;
     XF_PUSH_Component_Fast(XF_URL_(@"rac://Home/RACDetail", (@{

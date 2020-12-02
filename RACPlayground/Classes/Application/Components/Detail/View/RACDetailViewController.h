@@ -10,6 +10,6 @@
 #import "LEViewController.h"
 #import "RACDetailViewProtocol.h"
 
-@interface RACDetailViewController : UIViewController <RACDetailViewProtocol>
+@interface RACDetailViewController : UIViewController 
 
 @end

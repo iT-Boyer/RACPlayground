@@ -18,3 +18,5 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <XFLegoVIPER/XFLegoVIPER.h>
 #import <XFLegoVIPER/XFURLRoute.h>
+//针对MVVM组件，获取mvvm的控制
+#import <XFLegoVIPER/LEMVVMConnector.h>
