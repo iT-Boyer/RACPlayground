@@ -29,13 +29,14 @@ XF_AutoAssemblyModule_Fast
 - (void)transition2Detail:(NSString *)imgUrl
 {
     //
-    RACDetailViewController *detail = [RACDetailViewController new];
-    [LEMVVMConnector makeComponentFromUInterface:detail forName:@"detail" intentData:@{@"imgUrl":imgUrl}];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detail];
-    [self.realUInterface presentViewController:nav animated:YES completion:nil];
-    return;
+//    RACDetailViewController *detail = [RACDetailViewController new];
+//    [LEMVVMConnector makeComponentFromUInterface:detail forName:@"detail" intentData:@{@"imgUrl":imgUrl}];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detail];
+//    [self.realUInterface presentViewController:nav animated:YES completion:nil];
+//    return;
     //出现bug：https://github.com/yizzuide/XFLegoVIPER/issues/12
-    XF_PUSH_Component_Fast(@"rac://Home/RACDetail")
+//    XF_PUSH_Component_Fast(@"rac://Home/detail")
+    XF_Present_URLComponent_Fast(@"rac://Home/detail")
     return;
     XF_PUSH_Component_Fast(XF_URL_(@"rac://Home/RACDetail", (@{
                                                                 @"imgUrl":imgUrl

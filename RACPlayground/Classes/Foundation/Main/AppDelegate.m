@@ -34,7 +34,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 配置乐高框架 // 使有默认配置
-    [[[XFLegoConfig defaultConfig]
+    [[[[XFLegoConfig defaultConfig]
+                    setClassPrefix:@"RAC"]   //设置通用模块前辍,用于MVx架构里的控制器加载VIPER视图作为子控制器
                     enableLog]                                           // 允许打印log
                     addComponentHanderPlug:[LEMVVMModuleHandler class]]; // 添加扩展MVVM模块组件处理器（用来处理MVVM模块组件）
     
@@ -43,9 +44,10 @@
                                  @"rac://Login", // 测试跳转
                                  @"rac://RACRegister", //
                                  @"rac://Home",
-                                 @"rac://Home/Set",
-                                 @"rac://Home/RACDetail"
+                                 @"rac://Home/set",
+                                 @"rac://Home/detail"
                                  ]];
+ 
     
     // 根据URL显示组件(注意：这里一定要可以用使用self.window，不然当前宏不可用！)
 //    XF_ShowURLComponent2Window_Fast(@"rac://Login")
