@@ -44,7 +44,7 @@
                                  @"rac://Login", // 测试跳转
                                  @"rac://RACRegister", //
                                  @"rac://Home",
-                                 @"rac://Home/set",
+//                                 @"rac://Home/set",
                                  @"rac://Home/detail"
                                  ]];
  

@@ -23,7 +23,7 @@ XF_AutoAssemblyModule_Fast
 
 -(void)transition2Setting
 {
-    XF_PUSH_Component_Fast(@"rac://Home/RACSet")
+    XF_PUSH_Component_Fast(@"rac://Home/Set")
 }
 
 - (void)transition2Detail:(NSString *)imgUrl
