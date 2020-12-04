@@ -55,6 +55,7 @@
 		F9B0B90D2567B246008A9DEB /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0B90B2567B246008A9DEB /* UIImage+Rotate.m */; };
 		F9D291B1255AAAB30023E5A7 /* RACRegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D291AA255AAAB30023E5A7 /* RACRegisterViewModel.m */; };
 		F9D291B2255AAAB30023E5A7 /* RACRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D291AF255AAAB30023E5A7 /* RACRegisterViewController.m */; };
+		F9E4ABC9257A0E9C00360330 /* JHSearchCountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E4ABC8257A0E9C00360330 /* JHSearchCountHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,8 @@
 		F9D291AD255AAAB30023E5A7 /* RACRegisterDataDriverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterDataDriverProtocol.h; sourceTree = "<group>"; };
 		F9D291AF255AAAB30023E5A7 /* RACRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACRegisterViewController.m; sourceTree = "<group>"; };
 		F9D291B0255AAAB30023E5A7 /* RACRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRegisterViewController.h; sourceTree = "<group>"; };
+		F9E4ABC7257A0E9C00360330 /* JHSearchCountHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHSearchCountHeaderView.h; sourceTree = "<group>"; };
+		F9E4ABC8257A0E9C00360330 /* JHSearchCountHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHSearchCountHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -676,6 +679,8 @@
 			children = (
 				F937EBBD2558EB930066160B /* HomeActivity.h */,
 				F937EBBC2558EB930066160B /* HomeActivity.m */,
+				F9E4ABC7257A0E9C00360330 /* JHSearchCountHeaderView.h */,
+				F9E4ABC8257A0E9C00360330 /* JHSearchCountHeaderView.m */,
 				A48844D125656754002FACC8 /* RACDogCell.h */,
 				A48844D225656755002FACC8 /* RACDogCell.m */,
 			);
@@ -1046,6 +1051,7 @@
 				F937EBD62558EB930066160B /* RACViewController.m in Sources */,
 				A48844C32561786C002FACC8 /* PublicApiService.m in Sources */,
 				F937EBF42558EB930066160B /* HomePresenter.m in Sources */,
+				F9E4ABC9257A0E9C00360330 /* JHSearchCountHeaderView.m in Sources */,
 				F937EBD72558EB930066160B /* RWViewController.m in Sources */,
 				A48844D325656755002FACC8 /* RACDogCell.m in Sources */,
 				A48844C025602BE5002FACC8 /* RACSetViewController.m in Sources */,

@@ -69,6 +69,8 @@
         make.center.equalTo(@0);
         make.size.mas_equalTo(CGSizeMake(400, 400));
     }];
+    
+    
 }
 
 - (void)bindViewData {

@@ -11,11 +11,13 @@
 #import <MJRefresh/MJRefresh.h>
 #import "RACDogItem.h"
 #import "RACDogCell.h"
+#import "JHSearchCountHeaderView.h"
 #define EventHandler  XFConvertPresenterToType(id<HomeEventHandlerPort>)
 
 @interface HomeActivity ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UIButton *setBtn;
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) JHSearchCountHeaderView *headerView;
 @end
 
 @implementation HomeActivity
@@ -32,6 +34,16 @@
     [self bindViewData];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    JHSearchCountHeaderView *headerView = [JHSearchCountHeaderView new];
+    self.tableView.tableHeaderView = headerView;
+    CGFloat height = [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    CGRect frame = headerView.frame;
+    frame.size.height = height;
+    self.tableView.tableHeaderView.frame = frame;
+}
 #pragma mark - 初始化
 - (void)config {
     self.view.backgroundColor = [UIColor whiteColor];
@@ -55,7 +67,6 @@
         make.center.equalTo(@0);
         make.left.bottom.equalTo(@0);
     }];
-
     XF_Define_Weak
     MJRefreshAutoNormalFooter * _Nonnull extractedExpr = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         if(self.tableView.mj_header.isRefreshing) {
@@ -157,5 +168,12 @@
     return _tableView;
 }
 
+-(JHSearchCountHeaderView *)headerView
+{
+    if (!_headerView) {
+        _headerView = [JHSearchCountHeaderView new];
+    }
+    return _headerView;
+}
 
 @end
