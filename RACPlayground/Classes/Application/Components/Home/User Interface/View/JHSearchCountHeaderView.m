@@ -25,32 +25,37 @@
 {
     UILabel *status = [UILabel new];
     UILabel *count = [UILabel new];
+    UIView  *line = [UIView new];
     status.text = @"全部";
     count.text = @"0";
     _statuLab = status;
     _countLab = count;
     UIView *leftView = [self addViewStyle:@"企业状态" view:status];
     UIView *rightView = [self addViewStyle:@"企业数量" view:count];
-    leftView.backgroundColor = [UIColor yellowColor];
-    rightView.backgroundColor = [UIColor orangeColor];
-    
+    line.backgroundColor = [UIColor grayColor];
     [self addSubview:leftView];
     [self addSubview:rightView];
-    self.backgroundColor = [UIColor grayColor];
+    [self addSubview:line];
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake([UIScreen mainScreen].bounds.size.width, 250));
+        make.size.mas_equalTo(CGSizeMake([UIScreen mainScreen].bounds.size.width, 90));
     }];
     [leftView mas_makeConstraints:^(MASConstraintMaker *make){
-        make.centerY.equalTo(@0);
+        make.centerY.equalTo(@-5);
         make.left.equalTo(@20);
     }];
     
     [rightView mas_makeConstraints:^(MASConstraintMaker *make){
-        make.centerY.equalTo(@0);
+        make.centerY.equalTo(@-5);
         make.right.equalTo(@-20);
         make.left.equalTo(leftView.mas_right).offset(20);
         make.width.equalTo(leftView.mas_width);
     }];
+    [line mas_makeConstraints:^(MASConstraintMaker *make){
+        make.left.right.equalTo(@0);
+        make.height.equalTo(@10);
+        make.bottom.equalTo(@0);
+    }];
+
 }
 
 -(void)refreshStatus:(NSString *)status count:(NSString *)count

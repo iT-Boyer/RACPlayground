@@ -37,12 +37,12 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    JHSearchCountHeaderView *headerView = [JHSearchCountHeaderView new];
-    self.tableView.tableHeaderView = headerView;
-    CGFloat height = [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    CGRect frame = headerView.frame;
-    frame.size.height = height;
-    self.tableView.tableHeaderView.frame = frame;
+//    JHSearchCountHeaderView *headerView = [JHSearchCountHeaderView new];
+//    self.tableView.tableHeaderView = headerView;
+//    CGFloat height = [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+//    CGRect frame = headerView.frame;
+//    frame.size.height = height;
+//    self.tableView.tableHeaderView.frame = frame;
 }
 #pragma mark - 初始化
 - (void)config {
@@ -62,9 +62,17 @@
     self.navigationItem.leftBarButtonItem = backItem;
     [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchDown];
     
+    JHSearchCountHeaderView *headerView = [JHSearchCountHeaderView new];
+    [self.view addSubview:headerView];
     [self.view addSubview:self.tableView];
+    [headerView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.left.right.equalTo(@0);
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+    }];
+
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make){
-        make.center.equalTo(@0);
+        make.top.equalTo(headerView.mas_bottom);
+        make.centerX.equalTo(@0);
         make.left.bottom.equalTo(@0);
     }];
     XF_Define_Weak
